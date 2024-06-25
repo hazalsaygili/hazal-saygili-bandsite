@@ -16,7 +16,6 @@
 html {
   box-sizing: border-box;
   margin: 0;
-  font-size: 16px;
   font-family: "AvenirRegular";
   width: 100vw;
 }
@@ -140,20 +139,20 @@ h3 {
   list-style: none;
   width: 100%;
   justify-content: space-evenly;
-  padding-inline-start: 0;
   padding: 0;
 }
 @media screen and (min-width: 768px) {
   .navbar__panel {
-    width: -moz-fit-content;
-    width: fit-content;
+    display: flex;
+    justify-content: flex-start;
     gap: 2rem;
+    margin-left: 4rem;
   }
 }
 .navbar__link {
   color: #E1E1E1;
   text-decoration: none;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
 }
 .navbar__link:hover {
   color: #FFFFFF;
@@ -161,14 +160,14 @@ h3 {
 }
 .navbar__link--active {
   color: #FFFFFF;
-  font-family: "AvenirBold";
+  font-family: "AvenirDemi";
   border-bottom: 3px solid #FFFFFF;
 }
 
 .hero {
   width: 100%;
   max-width: 1280;
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-bio.jpg);
@@ -178,7 +177,7 @@ h3 {
 }
 .hero__header {
   color: #FFFFFF;
-  max-height: 50%;
+  max-height: 60%;
 }
 
 .hero__image {
@@ -264,6 +263,10 @@ h3 {
     top: 1.6rem;
     right: 4rem;
   }
+}
+.footer__parag--copyright {
+  margin-bottom: 0;
+  padding-bottom: 2rem;
 }
 
 .contact {
