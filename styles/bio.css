@@ -17,7 +17,7 @@ html {
   box-sizing: border-box;
   margin: 0;
   font-family: "AvenirRegular";
-  width: 100vw;
+  max-width: 1280px;
 }
 
 *,
@@ -69,11 +69,14 @@ h2 {
   font-family: "AvenirDemi";
   font-size: 1.5rem;
   line-height: 2rem;
+  margin: 0;
+  padding: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
+    padding: 3rem 0 2.25rem 0;
   }
 }
 
@@ -103,21 +106,12 @@ h3 {
   }
 }
 
-.section__title {
-  margin: 0;
-  padding: 1.5rem 0 1rem 0;
-}
-@media screen and (min-width: 768px) {
-  .section__title {
-    padding: 3rem 0 2.25rem 0;
-  }
-}
-
 .navbar {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #323232;
+  width: 100vw;
 }
 @media screen and (min-width: 768px) {
   .navbar {
@@ -164,72 +158,12 @@ h3 {
   border-bottom: 3px solid #FFFFFF;
 }
 
-.hero {
-  width: 100%;
-  max-width: 1280;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-bio.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.hero__header {
-  color: #FFFFFF;
-  max-height: 60%;
-}
-
-.hero__image {
-  display: flex;
-  max-width: 100%;
-}
-
-.about__container {
-  padding: 0;
-}
-@media screen and (min-width: 768px) {
-  .about__container {
-    padding: 0 4rem;
-  }
-}
-.about__quote {
-  font-family: "AvenirDemi";
-  font-size: 1.5rem;
-}
-.about__quote--ref {
-  font-family: "AvenirDemi";
-  font-size: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .about__content {
-    display: flex;
-    gap: 1rem;
-  }
-}
-
-.photogallery {
-  background-color: #FAFAFA;
-}
-.photogallery__panel {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.photogallery__image {
-  width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .photogallery__image {
-    width: 30%;
-  }
-}
-
 .footer {
   margin-top: 1rem;
   background-color: #323232;
   color: #FFFFFF;
   position: relative;
+  width: 100vw;
 }
 @media screen and (min-width: 768px) {
   .footer {
@@ -251,31 +185,100 @@ h3 {
   .footer__wrapper {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
+    gap: 3rem;
     align-items: center;
     justify-content: flex-start;
   }
 }
+.footer__brandname {
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+}
 @media screen and (min-width: 768px) {
   .footer__brandname {
-    font-family: "AvenirRegular";
     position: absolute;
-    top: 1.6rem;
+    top: 2rem;
     right: 4rem;
   }
 }
-.footer__parag--copyright {
+@media screen and (min-width: 1280px) {
+  .footer__brandname {
+    right: 6rem;
+  }
+}
+.footer__copyright {
   margin-bottom: 0;
   padding-bottom: 2rem;
 }
-
-.contact {
+.footer__contact {
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 768px) {
-  .contact {
+  .footer__contact {
     flex-direction: row;
     gap: 4rem;
+  }
+}
+.footer__socialMediaIcons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__header {
+  color: #FFFFFF;
+  max-height: 60%;
+}
+.hero__image {
+  display: flex;
+  max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .about__wrapper {
+    padding: 0 4rem;
+  }
+}
+.about__quote {
+  font-family: "AvenirDemi";
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.about__quoteRef {
+  font-family: "AvenirDemi";
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .about__content {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.photogallery {
+  background-color: #FAFAFA;
+}
+.photogallery__panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.photogallery__image {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .photogallery__image {
+    width: 30%;
   }
 }/*# sourceMappingURL=bio.css.map */
