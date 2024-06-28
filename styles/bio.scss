@@ -7,7 +7,6 @@ html {
     box-sizing: border-box;
     margin: 0;
     font-family: 'AvenirRegular';
-    width: 100vw;
 }
 
 *,
@@ -33,9 +32,6 @@ a {
     text-decoration: none;
 }
 
-img {
-    max-width: 100%;
-}
 
 footer {
     @include tablet {
@@ -81,10 +77,15 @@ h3 {
     }
 }
 
+ul {
+    list-style-type: none;
+}
+
+
 label,
 input,
 button {
-  display:flex;
+    display: flex;
 }
 
 .container {
@@ -105,7 +106,7 @@ button {
     flex-direction: column;
     align-items: center;
     background-color: $bandsite-black;
-    width: 100vw;
+    width: 100%;
 
     @include tablet {
         flex-direction: row;
@@ -162,7 +163,7 @@ button {
     background-color: $bandsite-black;
     color: $white;
     position: relative;
-    width: 100vw;
+    width: 100%;
 
 
     @include tablet {
@@ -281,6 +282,10 @@ button {
 
     }
 
+    &__image {
+        max-width: 100%;
+    }
+
 }
 
 .photogallery {
@@ -304,25 +309,51 @@ button {
 
 .commentFlow {
 
-    &__wrapper{
+    &__addCommentWrapper {
         display: flex;
-        flex-direction: column;
+        margin: 0 auto;
+        justify-content: center;
+
+        @include tablet {
+            width: 75%;
+        }
+
+        @include desktop {
+            width: 75%;
+
+        }
+
+    }
+
+    &__Img {
+        margin-top: 2.5rem;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+
     }
 
     &__addComment {
-        width:35%;
         display: flex;
         flex-direction: column;
-        gap:0.25rem;
-        margin: 0 auto;
+        gap: 0.25rem;
+        padding: 2rem 1rem;
 
+        @include tablet {
+            width: 75%;
+        }
+
+        @include desktop {
+            width: 50%;
+
+        }
     }
 
-    &__commentSubmitButton{
-        width:30%;
+    &__commentSubmitButton {
+        width: 30%;
         margin-top: 1rem;
         padding: 1rem 2rem;
-        align-self:flex-end;
+        align-self: flex-end;
         justify-content: center;
         background-color: $bandsite-black;
         color: $white;
@@ -330,6 +361,53 @@ button {
         border: 0px;
         font-size: 90%;
         line-height: 1.375rem;
+
+        :hover {
+            background-color: $bandsite-darkblack;
+        }
+    }
+
+    &__label {
+        padding-top: 0.5rem;
+
+    }
+
+    &__commentList {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding-left: 0;
+
+        @include tablet {
+            width: 75%;
+        }
+
+        @include desktop {
+            width: 75%;
+
+        }
+
+    }
+
+    &__commentCard {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+
+        @include tablet {
+            width: 75%
+        }
+
+        @include desktop {
+            width: 50%;
+
+        }
+    }
+
+    &__commentCardWrapper {
+        display: flex;
+        justify-content: center;
     }
 
 }

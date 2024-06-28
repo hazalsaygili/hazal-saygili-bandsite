@@ -17,7 +17,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   font-family: "AvenirRegular";
-  width: 100vw;
 }
 
 *,
@@ -41,10 +40,6 @@ body {
 
 a {
   text-decoration: none;
-}
-
-img {
-  max-width: 100%;
 }
 
 @media screen and (min-width: 767px) {
@@ -92,6 +87,10 @@ h3 {
   }
 }
 
+ul {
+  list-style-type: none;
+}
+
 label,
 input,
 button {
@@ -117,7 +116,7 @@ button {
   flex-direction: column;
   align-items: center;
   background-color: #323232;
-  width: 100vw;
+  width: 100%;
 }
 @media screen and (min-width: 767px) {
   .navbar {
@@ -169,7 +168,7 @@ button {
   background-color: #323232;
   color: #FFFFFF;
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 @media screen and (min-width: 767px) {
   .footer {
@@ -270,6 +269,9 @@ button {
     gap: 1rem;
   }
 }
+.about__image {
+  max-width: 100%;
+}
 
 .photogallery {
   background-color: #FAFAFA;
@@ -289,16 +291,42 @@ button {
   }
 }
 
-.commentFlow__wrapper {
+.commentFlow__addCommentWrapper {
   display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+@media screen and (min-width: 767px) {
+  .commentFlow__addCommentWrapper {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .commentFlow__addCommentWrapper {
+    width: 75%;
+  }
+}
+.commentFlow__Img {
+  margin-top: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
 }
 .commentFlow__addComment {
-  width: 35%;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+@media screen and (min-width: 767px) {
+  .commentFlow__addComment {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .commentFlow__addComment {
+    width: 50%;
+  }
 }
 .commentFlow__commentSubmitButton {
   width: 30%;
@@ -312,4 +340,46 @@ button {
   border: 0px;
   font-size: 90%;
   line-height: 1.375rem;
+}
+.commentFlow__commentSubmitButton :hover {
+  background-color: #000000;
+}
+.commentFlow__label {
+  padding-top: 0.5rem;
+}
+.commentFlow__commentList {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 0;
+}
+@media screen and (min-width: 767px) {
+  .commentFlow__commentList {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .commentFlow__commentList {
+    width: 75%;
+  }
+}
+.commentFlow__commentCard {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+}
+@media screen and (min-width: 767px) {
+  .commentFlow__commentCard {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .commentFlow__commentCard {
+    width: 50%;
+  }
+}
+.commentFlow__commentCardWrapper {
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=bio.css.map */

@@ -1,1 +1,250 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "AvenirRegular";
+  font-weight: 400;
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+@font-face {
+  font-family: "AvenirBold";
+  font-weight: 700;
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+@font-face {
+  font-family: "AvenirDemi";
+  font-weight: 600;
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
+html {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "AvenirRegular";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 767px) {
+  footer {
+    line-height: 1.25rem;
+  }
+}
+
+h1 {
+  font-family: "AvenirDemi";
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media screen and (min-width: 767px) {
+  h1 {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+h2 {
+  font-family: "AvenirDemi";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+  padding: 1.5rem 0 1rem 0;
+}
+@media screen and (min-width: 767px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding: 3rem 0 2.25rem 0;
+  }
+}
+
+h3 {
+  font-family: "AvenirDemi";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 767px) {
+  h3 {
+    font-size: 2rem;
+    line-height: 1.5rem;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+label,
+input,
+button {
+  display: flex;
+}
+
+.container {
+  padding: 0 1rem;
+}
+@media screen and (min-width: 767px) {
+  .container {
+    padding: 0 2.25rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .container {
+    padding: 0 5rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #323232;
+  width: 100%;
+}
+@media screen and (min-width: 767px) {
+  .navbar {
+    flex-direction: row;
+  }
+}
+.navbar__title {
+  color: #FFFFFF;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+@media screen and (min-width: 767px) {
+  .navbar__title {
+    padding: 1rem;
+  }
+}
+.navbar__panel {
+  display: flex;
+  list-style: none;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 0;
+}
+@media screen and (min-width: 767px) {
+  .navbar__panel {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-left: 4rem;
+  }
+}
+.navbar__link {
+  color: #E1E1E1;
+  text-decoration: none;
+  padding: 1rem 0 1rem 0;
+}
+.navbar__link:hover {
+  color: #FFFFFF;
+  border-bottom: 3px solid #FFFFFF;
+}
+.navbar__link--active {
+  color: #FFFFFF;
+  font-family: "AvenirDemi";
+  border-bottom: 3px solid #FFFFFF;
+}
+
+.footer {
+  margin-top: 1rem;
+  background-color: #323232;
+  color: #FFFFFF;
+  position: relative;
+  width: 100%;
+}
+@media screen and (min-width: 767px) {
+  .footer {
+    margin-top: 2rem;
+  }
+}
+.footer__subtitle {
+  font-family: "AvenirDemi";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+@media screen and (min-width: 767px) {
+  .footer__subtitle {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@media screen and (min-width: 767px) {
+  .footer__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+.footer__brandname {
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+}
+@media screen and (min-width: 767px) {
+  .footer__brandname {
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+  }
+}
+@media screen and (min-width: 1279px) {
+  .footer__brandname {
+    right: 6rem;
+  }
+}
+.footer__copyright {
+  margin-bottom: 0;
+  padding-bottom: 2rem;
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 767px) {
+  .footer__contact {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+.footer__socialMediaIcons {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero__header {
+  color: #FFFFFF;
+  max-height: 60%;
+}
+.hero__image {
+  display: flex;
+  max-width: 100%;
+}/*# sourceMappingURL=shows.css.map */

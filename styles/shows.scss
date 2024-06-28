@@ -1,0 +1,256 @@
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/typography" as *;
+
+
+html {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'AvenirRegular';
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+
+footer {
+    @include tablet {
+        line-height: 1.25rem;
+    }
+
+}
+
+h1 {
+    font-family: "AvenirDemi";
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @include tablet {
+        font-size: 3.75rem;
+        line-height: 4.25rem;
+    }
+}
+
+h2 {
+    font-family: "AvenirDemi";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 0;
+    padding: 1.5rem 0 1rem 0;
+
+    @include tablet {
+        font-size: 2.25rem;
+        line-height: 2.75rem;
+        padding: 3rem 0 2.25rem 0;
+    }
+
+}
+
+h3 {
+    font-family: "AvenirDemi";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+
+    @include tablet {
+        font-size: 2rem;
+        line-height: 1.5rem;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+label,
+input,
+button {
+    display: flex;
+}
+
+.container {
+    padding: 0 1rem;
+
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+
+    @include desktop {
+        padding: 0 5rem;
+    }
+
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $bandsite-black;
+    width: 100%;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    &__title {
+        color: $white;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        @include tablet {
+            padding: 1rem;
+        }
+
+    }
+
+    &__panel {
+        display: flex;
+        list-style: none;
+        width: 100%;
+        justify-content: space-evenly;
+        padding: 0;
+
+        @include tablet {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            margin-left: 4rem;
+        }
+
+    }
+
+    &__link {
+        color: $mercury;
+        text-decoration: none;
+        padding: 1rem 0 1rem 0;
+
+        &:hover {
+            color: $white;
+            border-bottom: 3px solid $white;
+
+        }
+
+        &--active {
+            color: $white;
+            font-family: "AvenirDemi";
+            border-bottom: 3px solid $white;
+        }
+    }
+}
+
+.footer {
+    margin-top: 1rem;
+    background-color: $bandsite-black;
+    color: $white;
+    position: relative;
+    width: 100%;
+
+
+    @include tablet {
+        margin-top: 2rem;
+    }
+
+    &__subtitle {
+        font-family: 'AvenirDemi';
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
+
+        @include tablet {
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+    }
+
+    &__wrapper {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            gap: 3rem;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &__brandname {
+        font-size: 1.5rem;
+        line-height: 1.375rem;
+
+        @include tablet {
+            position: absolute;
+            top: 2rem;
+            right: 4rem;
+        }
+
+        @include desktop {
+            right: 6rem;
+
+        }
+    }
+
+    &__copyright {
+        margin-bottom: 0;
+        padding-bottom: 2rem;
+    }
+
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+
+        @include tablet {
+            flex-direction: row;
+            gap: 4rem;
+        }
+
+    }
+
+    &__socialMediaIcons {
+        display: flex;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(rgba(32, 32, 32, 0.5),
+            rgba(32, 32, 32, 0.5)),
+        url(../assets/images/hero-shows.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__header {
+        color: $white;
+        max-height: 60%;
+    }
+
+    &__image {
+        display: flex;
+        max-width: 100%;
+    }
+
+}

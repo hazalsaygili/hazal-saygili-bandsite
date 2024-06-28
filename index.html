@@ -13,7 +13,7 @@
         <a href="./index.html" class="navbar__title">BANDSITE</a>
         <ul class="navbar__panel">
             <li><a href="./index.html" class="navbar__link navbar__link--active">Biography</a></li>
-            <li><a href="./index.html" class="navbar__link">Shows</a></li>
+            <li><a href="./pages/shows.html" class="navbar__link">Shows</a></li>
         </ul>
     </nav>
 
@@ -76,22 +76,62 @@
     <section class="commentFlow container">
         <h2>Join the Conversation</h2>
 
-        <div class="commentFlow__wrapper">
-
+        <div class="commentFlow__addCommentWrapper">
+            <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img">
             <form class="commentFlow__addComment">
-
                 <label for="commentName" class="commentFlow__label">NAME</label>
                 <input type="text" name="commentName" id="commentName" placeholder="Enter your name" />
 
                 <label for="commentContent" class="commentFlow__label">COMMENT</label>
-                <textarea type="text" name="commentContent" id="commentContent" placeholder="Add a new comment"></textarea>
+                <textarea type="text" name="commentContent" id="commentContent"
+                    placeholder="Add a new comment"></textarea>
 
                 <button class="commentFlow__commentSubmitButton">COMMENT</button>
-                
+
             </form>
-
-
         </div>
+
+        <ul class="commentFlow__commentList">
+
+            <div class="commentFlow__commentCardWrapper">
+                <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img commentFlow__Img--anonym">
+                <li class="commentFlow__commentCard">
+                    <p>Victor Pinto</p>
+                    <p>This is art. This is inexplicable magic expressed in the purest way, everything that makes up
+                        this
+                        majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
+                    </p>
+                
+                </li>
+            </div>
+    
+            <div class="commentFlow__commentCardWrapper">
+                <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img commentFlow__Img--anonym">
+                <li class="commentFlow__commentCard">
+                    <p>Christina Cabrera</p>
+                    <p>I feel blessed to have seen them in person. What a show! They were just perfection. 
+                     If there was one day of my life I could relive, this would be it. What an incredible day.
+                     Let us appreciate this for what it is and what it contains.
+                    </p>
+                </li>
+
+            </div>
+
+            <div class="commentFlow__commentCardWrapper">
+                <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img commentFlow__Img--anonym">
+                <li class="commentFlow__commentCard">
+                    <p>Isaac Tadesse</p>
+                    <p>
+                        I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. 
+                        What a beautiful expression of creativity. 
+                        Can't get enough. Let us appreciate this for what it is and what it contains.
+
+                    </p>
+
+                </li>
+            </div>
+
+        </ul>
 
     </section>
 
