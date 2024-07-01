@@ -10,13 +10,20 @@ form.addEventListener("submit", (event) => {
   const name = event.target.commentName.value;
   const content = event.target.commentContent.value;
 
+  const commentCardWrapper = createComment(name, content);
+  const commentList = document.getElementById("comments")
+  commentList.insertBefore(commentCardWrapper,commentList.firstChild);
+
+});
+
+let createComment = (name, content) => {
   const commentCardWrapper = document.createElement("div");
   commentCardWrapper.classList.add("commentFlow__commentCardWrapper");
 
-  const commentImg = document.createElement("img");
+  const commentImg = document.createElement("div");
   commentCardWrapper.appendChild(commentImg);
   commentImg.classList.add("commentFlow__Img");
-  commentImg.src = "./assets/images/Mohan-muruge.jpg";
+  commentImg.classList.add("commentFlow__Img--anonym");
 
   const commentCard = document.createElement("li");
   commentCard.classList.add("commentFlow__commentCard");
@@ -32,9 +39,5 @@ form.addEventListener("submit", (event) => {
   commentContent.innerText = content;
   commentCard.appendChild(commentContent);
 
-  const commentList = document.getElementById("comments")
-  commentList.insertBefore(commentCardWrapper,commentList.firstChild);
-
-});
-
-
+  return commentCardWrapper;
+}

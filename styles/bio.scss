@@ -311,15 +311,14 @@ button {
 
     &__addCommentWrapper {
         display: flex;
-        margin: 0 auto;
-
+        padding: 0 0;
 
         @include tablet {
-            width: 75%;
+            padding: 0 4rem;
         }
 
         @include desktop {
-            width: 75%;
+            padding: 0 8rem;
 
         }
 
@@ -342,15 +341,7 @@ button {
         flex-direction: column;
         gap: 0.25rem;
         padding: 2rem 1rem;
-
-        @include tablet {
-            width: 75%;
-        }
-
-        @include desktop {
-            width: 50%;
-
-        }
+        width: 100%;
     }
 
     &__commentSubmitButton {
@@ -381,14 +372,14 @@ button {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        padding-left: 0;
+        padding: 0 0;
 
         @include tablet {
-            width: 75%;
+            padding: 0 4rem;
         }
 
         @include desktop {
-            width: 75%;
+            padding: 0 8rem;
 
         }
 
@@ -398,15 +389,7 @@ button {
         display: flex;
         flex-direction: column;
         padding: 0.5rem 1rem;
-
-        @include tablet {
-            width: 75%
-        }
-
-        @include desktop {
-            width: 50%;
-
-        }
+        width: 100%;
     }
 
     &__commentCardWrapper {
