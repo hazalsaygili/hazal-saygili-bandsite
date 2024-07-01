@@ -312,7 +312,7 @@ button {
     &__addCommentWrapper {
         display: flex;
         margin: 0 auto;
-        justify-content: center;
+
 
         @include tablet {
             width: 75%;
@@ -326,11 +326,15 @@ button {
     }
 
     &__Img {
-        margin-top: 2.5rem;
+        align-self: center;
         width: 4rem;
         height: 4rem;
         border-radius: 50%;
 
+        &--anonym {
+            background-color: silver;
+
+        }
     }
 
     &__addComment {
@@ -362,7 +366,8 @@ button {
         font-size: 90%;
         line-height: 1.375rem;
 
-        :hover {
+        &:hover {
+            cursor:pointer;
             background-color: $bandsite-darkblack;
         }
     }
@@ -376,7 +381,6 @@ button {
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
         padding-left: 0;
 
         @include tablet {
@@ -407,7 +411,7 @@ button {
 
     &__commentCardWrapper {
         display: flex;
-        justify-content: center;
+        border-bottom: 1px solid silver;
     }
 
 }

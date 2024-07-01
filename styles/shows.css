@@ -66,6 +66,7 @@ h2 {
   line-height: 2rem;
   margin: 0;
   padding: 1.5rem 0 1rem 0;
+  color: #FFFFFF;
 }
 @media screen and (min-width: 767px) {
   h2 {
@@ -234,11 +235,18 @@ button {
 .hero {
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
   background-image: linear-gradient(rgba(32, 32, 32, 0.5), rgba(32, 32, 32, 0.5)), url(../assets/images/hero-shows.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media screen and (min-width: 767px) {
+  .hero {
+    flex-direction: row;
+  }
 }
 .hero__header {
   color: #FFFFFF;

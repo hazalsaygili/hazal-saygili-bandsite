@@ -294,7 +294,6 @@ button {
 .commentFlow__addCommentWrapper {
   display: flex;
   margin: 0 auto;
-  justify-content: center;
 }
 @media screen and (min-width: 767px) {
   .commentFlow__addCommentWrapper {
@@ -307,10 +306,13 @@ button {
   }
 }
 .commentFlow__Img {
-  margin-top: 2.5rem;
+  align-self: center;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
+}
+.commentFlow__Img--anonym {
+  background-color: silver;
 }
 .commentFlow__addComment {
   display: flex;
@@ -341,7 +343,8 @@ button {
   font-size: 90%;
   line-height: 1.375rem;
 }
-.commentFlow__commentSubmitButton :hover {
+.commentFlow__commentSubmitButton:hover {
+  cursor: pointer;
   background-color: #000000;
 }
 .commentFlow__label {
@@ -351,7 +354,6 @@ button {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   padding-left: 0;
 }
 @media screen and (min-width: 767px) {
@@ -381,5 +383,5 @@ button {
 }
 .commentFlow__commentCardWrapper {
   display: flex;
-  justify-content: center;
+  border-bottom: 1px solid silver;
 }/*# sourceMappingURL=bio.css.map */

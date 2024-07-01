@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/bio.css">
+    <script src="./scripts/index-page.js" defer></script>
+
 </head>
 
 <body class="home">
@@ -91,25 +93,24 @@
             </form>
         </div>
 
-        <ul class="commentFlow__commentList">
+        <ul class="commentFlow__commentList" id="comments">
 
             <div class="commentFlow__commentCardWrapper">
                 <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img commentFlow__Img--anonym">
                 <li class="commentFlow__commentCard">
-                    <p>Victor Pinto</p>
-                    <p>This is art. This is inexplicable magic expressed in the purest way, everything that makes up
+                    <p class="commentFlow__commentedName">Victor Pinto</p>
+                    <p class="commentFlow__commentedContent">This is art. This is inexplicable magic expressed in the purest way, everything that makes up
                         this
                         majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
                     </p>
-                
                 </li>
             </div>
     
             <div class="commentFlow__commentCardWrapper">
-                <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img commentFlow__Img--anonym">
+                <div class="commentFlow__Img commentFlow__Img--anonym"></div>
                 <li class="commentFlow__commentCard">
-                    <p>Christina Cabrera</p>
-                    <p>I feel blessed to have seen them in person. What a show! They were just perfection. 
+                    <p class="commentFlow__commentedName">Christina Cabrera</p>
+                    <p class="commentFlow__commentedContent">I feel blessed to have seen them in person. What a show! They were just perfection. 
                      If there was one day of my life I could relive, this would be it. What an incredible day.
                      Let us appreciate this for what it is and what it contains.
                     </p>
@@ -130,6 +131,8 @@
 
                 </li>
             </div>
+
+
 
         </ul>
 
