@@ -159,7 +159,6 @@ button {
 }
 
 .shows {
-    border-bottom: 1px solid $silver;
 
     h2 {
         font-size: 1.5rem;
@@ -181,7 +180,6 @@ button {
     &__mobile {
         display: flex;
         flex-direction: column;
-
     }
 
     &__buyTicketsButton {
@@ -191,13 +189,12 @@ button {
         border: 0px;
         justify-content: center;
         padding: 1rem 2rem;
-        margin-bottom: 1rem;
     }
 
      &__desktop {
         display:flex;
         flex-direction:column;
-       // flex-grow: 1;
+
     }
 
     &__desktopHeaderItem{
@@ -209,6 +206,9 @@ button {
     &__desktopShowItem{
         display:flex;
         justify-content: space-evenly;
+        border-bottom: 1px solid $silver;
+        padding: 1rem;
+        align-items: center;
 
     }
 

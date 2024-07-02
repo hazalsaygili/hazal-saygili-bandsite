@@ -2,7 +2,7 @@ let showsListArr = [
     {
         date: "Mon Sept 09 2024",
         venue: "Ronald Lane",
-        location: "San Francisco, CA}",
+        location: "San Francisco, CA",
     },
 
     {
@@ -62,7 +62,7 @@ function displayUpcomingShows() {
     showListSection.appendChild(showListWrapper);
 
     const showListTitle = document.createElement("h2");
-    showListTitle.innerHTML ="Shows";
+    showListTitle.innerHTML = "Shows";
     showListWrapper.appendChild(showListTitle);
 
 
@@ -72,86 +72,89 @@ function displayUpcomingShows() {
         showsMobile.classList.add("shows__mobile");
         showListWrapper.appendChild(showsMobile);
 
-        for (let i=0; i<showsListArr.length; i++ ) {
+        for (let i = 0; i < showsListArr.length; i++) {
+
+            // const showItem = document.createElement("div");
+            // showItem.classList.add("shows__showItem");
+            // showsMobile.appendChild(showItem);
 
             const dates = document.createElement("h3");
-            dates.innerText = "Date";
-            showListWrapper.appendChild(dates);
+            dates.innerText = "DATE";
+            showsMobile.appendChild(dates);
             const showDate = document.createElement("p");
             showDate.innerText = showsListArr[i].date;
-            showListWrapper.appendChild(showDate);
+            showsMobile.appendChild(showDate);
 
             const venues = document.createElement("h3");
-            venues.innerText = "Venue";
-            showListWrapper.appendChild(venues);
+            venues.innerText = "VENUE";
+            showsMobile.appendChild(venues);
             const showVenue = document.createElement("p");
             showVenue.innerText = showsListArr[i].venue;
-            showListWrapper.appendChild(showVenue);
+            showsMobile.appendChild(showVenue);
 
             const locations = document.createElement("h3");
-            locations.innerText = "Location";
-            showListWrapper.appendChild(locations);
+            locations.innerText = "LOCATION";
+            showsMobile.appendChild(locations);
             const showLocation = document.createElement("p");
             showLocation.innerText = showsListArr[i].location;
-            showListWrapper.appendChild(showLocation);
+            showsMobile.appendChild(showLocation);
 
             const buyTicketButton = document.createElement("button");
             buyTicketButton.classList.add("shows__buyTicketsButton");
             buyTicketButton.innerText = "BUY TICKETS";
-            showListWrapper.appendChild(buyTicketButton);
+            showsMobile.appendChild(buyTicketButton);
 
         }
 
-        return showsMobile;
-
     }
 
-    if (mediaQueryDesktop.matches) {
+    else if (mediaQueryTablet.matches) {
 
         const showsDesktop = document.createElement("div");
         showsDesktop.classList.add("shows__desktop");
         showListWrapper.appendChild(showsDesktop);
 
+        const showsDesktopHeaders = document.createElement("div");
+        showsDesktopHeaders.classList.add("shows__desktopHeaderItem");
+        showsDesktop.appendChild(showsDesktopHeaders);
+
         const dates = document.createElement("h3");
-        dates.innerText("Date");
-        showListWrapper.appendChild(dates);
+        dates.innerText = "DATE";
+        showsDesktopHeaders.appendChild(dates);
 
         const venues = document.createElement("h3");
-        venues.innerText("Venue");
-        showListWrapper.appendChild(venues);
+        venues.innerText = "VENUE";
+        showsDesktopHeaders.appendChild(venues);
 
         const locations = document.createElement("h3");
-        locations.innerText("Location");
-        showListWrapper.appendChild(locations);
+        locations.innerText = "LOCATION";
+        showsDesktopHeaders.appendChild(locations);
 
-        for (let i=0; i<showsListArr.length; i++ ){
 
-            const showItem = document.createElement("div");
+        for (let i = 0; i < showsListArr.length; i++) {
+
+            let showItem = document.createElement("div");
             showItem.classList.add("shows__desktopShowItem");
-            showListWrapper.appendChild(showItem);
+            showsDesktop.appendChild(showItem);
 
-            const showDate = document.createElement("p");
-            showDate.innerText(showsListArr[i].date);
+            let showDate = document.createElement("p");
+            showDate.innerText = showsListArr[i].date;
             showItem.appendChild(showDate);
 
-            const showVenue = document.createElement("p");
-            showVenue.innerText(showsListArr[i].venue);
+            let showVenue = document.createElement("p");
+            showVenue.innerText = showsListArr[i].venue;
             showItem.appendChild(showVenue);
 
             const showLocation = document.createElement("p");
-            showLocation.innerText(showsListArr[i].location);
+            showLocation.innerText = showsListArr[i].location;
             showItem.appendChild(showLocation);
 
             const buyTicketButton = document.createElement("button");
             buyTicketButton.classList.add("shows__buyTicketsButton");
-            showLocation.innerText("BUY TICKETS");
-            showItem.appendChild(showListWrapper);
-
+            buyTicketButton.innerText = "BUY TICKETS";
+            showItem.appendChild(buyTicketButton);
 
         }
-
-        return showsDesktop;
-
 
     }
 

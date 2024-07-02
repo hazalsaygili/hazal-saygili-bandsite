@@ -164,9 +164,6 @@ button {
   border-bottom: 3px solid #FFFFFF;
 }
 
-.shows {
-  border-bottom: 1px solid #AFAFAF;
-}
 .shows h2 {
   font-size: 1.5rem;
   color: #323232;
@@ -193,7 +190,6 @@ button {
   border: 0px;
   justify-content: center;
   padding: 1rem 2rem;
-  margin-bottom: 1rem;
 }
 .shows__desktop {
   display: flex;
@@ -207,6 +203,9 @@ button {
 .shows__desktopShowItem {
   display: flex;
   justify-content: space-evenly;
+  border-bottom: 1px solid #AFAFAF;
+  padding: 1rem;
+  align-items: center;
 }
 
 .footer {
