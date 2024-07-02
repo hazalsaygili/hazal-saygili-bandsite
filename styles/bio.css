@@ -357,6 +357,10 @@ button {
     padding: 0 8rem;
   }
 }
+.commentFlow__commentList--formSubmit {
+  display: none;
+  transition: 0.2s;
+}
 .commentFlow__commentCard {
   display: flex;
   flex-direction: column;

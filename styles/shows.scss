@@ -158,6 +158,62 @@ button {
     }
 }
 
+.shows {
+    border-bottom: 1px solid $silver;
+
+    h2 {
+        font-size: 1.5rem;
+        color: $bandsite-black;
+        flex: 0 0 5rem;
+    
+        @include tablet {
+            font-size: 2.25rem;
+        }
+    
+    }
+
+    h3 {
+        font-size: 0.8rem;
+        color: $silver;
+        margin:0;
+    }
+
+    &__mobile {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__buyTicketsButton {
+        background-color: $bandsite-black;
+        color: $white;
+        border-radius: 0.2rem;
+        border: 0px;
+        justify-content: center;
+        padding: 1rem 2rem;
+        margin-bottom: 1rem;
+    }
+
+     &__desktop {
+        display:flex;
+        flex-direction:column;
+       // flex-grow: 1;
+    }
+
+    &__desktopHeaderItem{
+        display:flex;
+        justify-content: space-evenly;
+        padding: 1rem;
+    }
+
+    &__desktopShowItem{
+        display:flex;
+        justify-content: space-evenly;
+
+    }
+
+}
+
 .footer {
     margin-top: 1rem;
     background-color: $bandsite-black;
