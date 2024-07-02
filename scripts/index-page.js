@@ -36,6 +36,7 @@ form.addEventListener("submit", (event) => {
 });
 
 let createComment = (name, content) => {
+  
   const commentCardWrapper = document.createElement("div");
   commentCardWrapper.classList.add("commentFlow__commentCardWrapper");
 

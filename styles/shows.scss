@@ -163,7 +163,7 @@ button {
     h2 {
         font-size: 1.5rem;
         color: $bandsite-black;
-        flex: 0 0 5rem;
+        //flex: 0 0 5rem;
     
         @include tablet {
             font-size: 2.25rem;
@@ -180,6 +180,9 @@ button {
     &__mobile {
         display: flex;
         flex-direction: column;
+        @include tablet{
+            display:none;
+        }
     }
 
     &__buyTicketsButton {
@@ -189,11 +192,19 @@ button {
         border: 0px;
         justify-content: center;
         padding: 1rem 2rem;
+        
+        &--hidden{
+            visibility: hidden;
+        }
     }
 
-     &__desktop {
-        display:flex;
-        flex-direction:column;
+    &__desktop {
+        display:none;
+
+        @include tablet {
+            display:flex;
+            flex-direction:column;
+        }
 
     }
 
@@ -206,9 +217,18 @@ button {
     &__desktopShowItem{
         display:flex;
         justify-content: space-evenly;
-        border-bottom: 1px solid $silver;
+        border-bottom: 1px solid $mercury;
         padding: 1rem;
         align-items: center;
+
+        &:hover{
+            cursor:pointer;
+            background-color: $alabaster;
+        }
+
+        &:active{
+            background-color: $mercury;
+        }
 
     }
 

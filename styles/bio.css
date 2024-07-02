@@ -31,7 +31,7 @@ body {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   body {
     font-size: 0.875rem;
     line-height: 1.375rem;
@@ -42,7 +42,7 @@ a {
   text-decoration: none;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   footer {
     line-height: 1.25rem;
   }
@@ -53,7 +53,7 @@ h1 {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: 3.75rem;
     line-height: 4.25rem;
@@ -67,7 +67,7 @@ h2 {
   margin: 0;
   padding: 1.5rem 0 1rem 0;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
@@ -80,7 +80,7 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   h3 {
     font-size: 2rem;
     line-height: 1.5rem;
@@ -100,12 +100,12 @@ button {
 .container {
   padding: 0 1rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .container {
     padding: 0 2.25rem;
   }
 }
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .container {
     padding: 0 5rem;
   }
@@ -118,7 +118,7 @@ button {
   background-color: #323232;
   width: 100%;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navbar {
     flex-direction: row;
   }
@@ -128,7 +128,7 @@ button {
   font-size: 1.5rem;
   padding: 1rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navbar__title {
     padding: 1rem;
   }
@@ -140,7 +140,7 @@ button {
   justify-content: space-evenly;
   padding: 0;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .navbar__panel {
     display: flex;
     justify-content: flex-start;
@@ -170,7 +170,7 @@ button {
   position: relative;
   width: 100%;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer {
     margin-top: 2rem;
   }
@@ -180,13 +180,13 @@ button {
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer__subtitle {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer__wrapper {
     display: flex;
     flex-direction: row;
@@ -199,14 +199,14 @@ button {
   font-size: 1.5rem;
   line-height: 1.375rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer__brandname {
     position: absolute;
     top: 2rem;
     right: 4rem;
   }
 }
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .footer__brandname {
     right: 6rem;
   }
@@ -219,7 +219,7 @@ button {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .footer__contact {
     flex-direction: row;
     gap: 4rem;
@@ -249,7 +249,7 @@ button {
   max-width: 100%;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .about__wrapper {
     padding: 0 4rem;
   }
@@ -263,7 +263,7 @@ button {
   font-family: "AvenirDemi";
   font-size: 1rem;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .about__content {
     display: flex;
     gap: 1rem;
@@ -285,7 +285,7 @@ button {
 .photogallery__image {
   width: 100%;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .photogallery__image {
     width: 30%;
   }
@@ -295,12 +295,12 @@ button {
   display: flex;
   padding: 0 0;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .commentFlow__addCommentWrapper {
     padding: 0 4rem;
   }
 }
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .commentFlow__addCommentWrapper {
     padding: 0 8rem;
   }
@@ -312,7 +312,7 @@ button {
   border-radius: 50%;
 }
 .commentFlow__Img--anonym {
-  background-color: silver;
+  background-color: #AFAFAF;
 }
 .commentFlow__addComment {
   display: flex;
@@ -347,12 +347,12 @@ button {
   flex-direction: column;
   padding: 0 0;
 }
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 768px) {
   .commentFlow__commentList {
     padding: 0 4rem;
   }
 }
-@media screen and (min-width: 1279px) {
+@media screen and (min-width: 1280px) {
   .commentFlow__commentList {
     padding: 0 8rem;
   }
@@ -369,5 +369,5 @@ button {
 }
 .commentFlow__commentCardWrapper {
   display: flex;
-  border-bottom: 1px solid silver;
+  border-bottom: 1px solid #E1E1E1;
 }/*# sourceMappingURL=bio.css.map */

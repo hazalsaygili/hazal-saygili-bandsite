@@ -37,18 +37,17 @@ let showsListArr = [
 
 ]
 
+
+
 window.addEventListener("load", (event) => {
 
     displayUpcomingShows();
+    
 
 });
 
 
 function displayUpcomingShows() {
-
-    const mediaQueryMobile = window.matchMedia('(max-width: 768px)');
-    const mediaQueryTablet = window.matchMedia('(min-width: 768px)');
-    const mediaQueryDesktop = window.matchMedia('(min-width: 1280px)');
 
     const showListSection = document.createElement("section");
     showListSection.classList.add("shows", "container");
@@ -66,7 +65,6 @@ function displayUpcomingShows() {
     showListWrapper.appendChild(showListTitle);
 
 
-    if (mediaQueryMobile.matches) {
 
         const showsMobile = document.createElement("div");
         showsMobile.classList.add("shows__mobile");
@@ -104,11 +102,10 @@ function displayUpcomingShows() {
             buyTicketButton.innerText = "BUY TICKETS";
             showsMobile.appendChild(buyTicketButton);
 
-        }
 
     }
 
-    else if (mediaQueryTablet.matches) {
+
 
         const showsDesktop = document.createElement("div");
         showsDesktop.classList.add("shows__desktop");
@@ -129,6 +126,12 @@ function displayUpcomingShows() {
         const locations = document.createElement("h3");
         locations.innerText = "LOCATION";
         showsDesktopHeaders.appendChild(locations);
+
+        const buyTicketButton = document.createElement("button");
+        buyTicketButton.classList.add("shows__buyTicketsButton");
+        buyTicketButton.classList.add("shows__buyTicketsButton--hidden");
+        buyTicketButton.innerText = "BUY TICKETS";
+        showsDesktopHeaders.appendChild(buyTicketButton);
 
 
         for (let i = 0; i < showsListArr.length; i++) {
@@ -159,6 +162,6 @@ function displayUpcomingShows() {
     }
 
 
-}
+
 
 

@@ -330,7 +330,7 @@ button {
         border-radius: 50%;
 
         &--anonym {
-            background-color: silver;
+            background-color: $silver;
 
         }
     }
@@ -399,7 +399,7 @@ button {
 
     &__commentCardWrapper {
         display: flex;
-        border-bottom: 1px solid silver;
+        border-bottom: 1px solid $mercury;
     }
 
 }
