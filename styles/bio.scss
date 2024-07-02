@@ -306,11 +306,13 @@ button {
     }
 }
 
+
+
 .commentFlow {
 
     &__addCommentWrapper {
         display: flex;
-        padding: 0 0;
+        padding: 2rem 0;
 
         @include tablet {
             padding: 0 4rem;
@@ -324,10 +326,16 @@ button {
     }
 
     &__Img {
-        align-self: center;
-        width: 4rem;
-        height: 4rem;
+        align-self: start;
+        margin-top: 1rem;
         border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
+        }
 
         &--anonym {
             background-color: $silver;
@@ -339,7 +347,7 @@ button {
         display: flex;
         flex-direction: column;
         gap: 0.25rem;
-        padding: 2rem 1rem;
+        padding: 0rem 1rem;
         width: 100%;
     }
 
@@ -362,8 +370,26 @@ button {
         }
     }
 
+    &__textFields{
+        min-height: 2.25rem;
+        border-radius: 4px;
+        border: 1px solid $silver;
+        padding: 0.75rem;
+        width:100%;
+        background-color: $alabaster;
+        @include tablet{
+            min-height: 3rem;
+            padding: 1rem;
+        }
+    
+    }
+
     &__label {
         padding-top: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: $silver;
+
 
     }
 
@@ -400,6 +426,19 @@ button {
     &__commentCardWrapper {
         display: flex;
         border-bottom: 1px solid $mercury;
+    }
+
+    &__commentedNameTimeWrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__commentedName {
+        font-weight: bold;
+    }
+
+    &__commentedTime {
+        color: $silver;
     }
 
 }

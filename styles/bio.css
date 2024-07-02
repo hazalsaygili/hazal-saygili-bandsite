@@ -293,7 +293,7 @@ button {
 
 .commentFlow__addCommentWrapper {
   display: flex;
-  padding: 0 0;
+  padding: 2rem 0;
 }
 @media screen and (min-width: 768px) {
   .commentFlow__addCommentWrapper {
@@ -306,10 +306,17 @@ button {
   }
 }
 .commentFlow__Img {
-  align-self: center;
-  width: 4rem;
-  height: 4rem;
+  align-self: start;
+  margin-top: 1rem;
   border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .commentFlow__Img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 .commentFlow__Img--anonym {
   background-color: #AFAFAF;
@@ -318,7 +325,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem;
   width: 100%;
 }
 .commentFlow__commentSubmitButton {
@@ -338,8 +345,25 @@ button {
   cursor: pointer;
   background-color: #000000;
 }
+.commentFlow__textFields {
+  min-height: 2.25rem;
+  border-radius: 4px;
+  border: 1px solid #AFAFAF;
+  padding: 0.75rem;
+  width: 100%;
+  background-color: #FAFAFA;
+}
+@media screen and (min-width: 768px) {
+  .commentFlow__textFields {
+    min-height: 3rem;
+    padding: 1rem;
+  }
+}
 .commentFlow__label {
   padding-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #AFAFAF;
 }
 .commentFlow__commentList {
   margin: 0 auto;
@@ -370,4 +394,14 @@ button {
 .commentFlow__commentCardWrapper {
   display: flex;
   border-bottom: 1px solid #E1E1E1;
+}
+.commentFlow__commentedNameTimeWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.commentFlow__commentedName {
+  font-weight: bold;
+}
+.commentFlow__commentedTime {
+  color: #AFAFAF;
 }/*# sourceMappingURL=bio.css.map */
