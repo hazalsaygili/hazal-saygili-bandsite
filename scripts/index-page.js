@@ -13,7 +13,7 @@ let commentArray = [
     content: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
   }
 ]
-// add an event listener ("callback")
+
 form.addEventListener("submit", (event) => {
   
   event.preventDefault();

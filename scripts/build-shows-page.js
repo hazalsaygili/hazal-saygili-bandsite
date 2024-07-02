@@ -1,38 +1,38 @@
 let showsListArr = [
     {
-        "date": "Mon Sept 09 2024",
-        "venue": "Ronald Lane",
-        "location": "San Francisco, CA}",
+        date: "Mon Sept 09 2024",
+        venue: "Ronald Lane",
+        location: "San Francisco, CA}",
     },
 
     {
-        "date": "Tue Sept 17 2024",
-        "venue": "Pier 3 East",
-        "location": "San Francisco, CA}",
+        date: "Tue Sept 17 2024",
+        venue: "Pier 3 East",
+        location: "San Francisco, CA",
     },
 
     {
-        "date": "Sat Oct 12 2024",
-        "venue": "View Lounge",
-        "location": "San Francisco, CA}",
+        date: "Sat Oct 12 2024",
+        venue: "View Lounge",
+        location: "San Francisco, CA",
     },
 
     {
-        "date": "Sat Nov 16 2024",
-        "venue": "Hyatt Agency",
-        "location": "San Francisco, CA}",
+        date: "Sat Nov 16 2024",
+        venue: "Hyatt Agency",
+        location: "San Francisco, CA",
     },
 
     {
-        "date": "Fri Nov 29 2024",
-        "venue": "Moscow Center",
-        "location": "San Francisco, CA}",
+        date: "Fri Nov 29 2024",
+        venue: "Moscow Center",
+        location: "San Francisco, CA",
     },
 
     {
-        "date": "Wed Dec 18 2024",
-        "venue": "Press Club",
-        "location": "San Francisco, CA}",
+        date: "Wed Dec 18 2024",
+        venue: "Press Club",
+        location: "San Francisco, CA",
     },
 
 ]
@@ -54,7 +54,7 @@ function displayUpcomingShows() {
     showListSection.classList.add("shows", "container");
 
     const showsBody = document.getElementById("home");
-    const footer = document.getElementsByTagName("footer");
+    const footer = document.getElementById("footer");
     showsBody.insertBefore(showListSection, footer);
 
     const showListWrapper = document.createElement("div");
@@ -62,49 +62,95 @@ function displayUpcomingShows() {
     showListSection.appendChild(showListWrapper);
 
     const showListTitle = document.createElement("h2");
-    showListTitle.innerText("Shows");
+    showListTitle.innerHTML ="Shows";
     showListWrapper.appendChild(showListTitle);
 
 
     if (mediaQueryMobile.matches) {
 
-        for (let i=0; i<showsListArr.length; i++ ) {
-            
         const showsMobile = document.createElement("div");
         showsMobile.classList.add("shows__mobile");
-        showListWrapper.appendChild(showListWrapper);
+        showListWrapper.appendChild(showsMobile);
+
+        for (let i=0; i<showsListArr.length; i++ ) {
+
+            const dates = document.createElement("h3");
+            dates.innerText = "Date";
+            showListWrapper.appendChild(dates);
+            const showDate = document.createElement("p");
+            showDate.innerText = showsListArr[i].date;
+            showListWrapper.appendChild(showDate);
+
+            const venues = document.createElement("h3");
+            venues.innerText = "Venue";
+            showListWrapper.appendChild(venues);
+            const showVenue = document.createElement("p");
+            showVenue.innerText = showsListArr[i].venue;
+            showListWrapper.appendChild(showVenue);
+
+            const locations = document.createElement("h3");
+            locations.innerText = "Location";
+            showListWrapper.appendChild(locations);
+            const showLocation = document.createElement("p");
+            showLocation.innerText = showsListArr[i].location;
+            showListWrapper.appendChild(showLocation);
+
+            const buyTicketButton = document.createElement("button");
+            buyTicketButton.classList.add("shows__buyTicketsButton");
+            buyTicketButton.innerText = "BUY TICKETS";
+            showListWrapper.appendChild(buyTicketButton);
+
+        }
+
+        return showsMobile;
+
+    }
+
+    if (mediaQueryDesktop.matches) {
+
+        const showsDesktop = document.createElement("div");
+        showsDesktop.classList.add("shows__desktop");
+        showListWrapper.appendChild(showsDesktop);
 
         const dates = document.createElement("h3");
         dates.innerText("Date");
         showListWrapper.appendChild(dates);
-        const showDate = document.createElement("p");
-        showDate.innerText(showsListArr[i].date);
-        showListWrapper.appendChild(showDate);
 
         const venues = document.createElement("h3");
         venues.innerText("Venue");
         showListWrapper.appendChild(venues);
-        const showVenue = document.createElement("p");
-        showVenue.innerText(showsListArr[i].venue);
-        showListWrapper.appendChild(showVenue);
 
         const locations = document.createElement("h3");
         locations.innerText("Location");
         showListWrapper.appendChild(locations);
-        const showLocation = document.createElement("p");
-        showLocation.innerText(showsListArr[i].location);
-        showListWrapper.appendChild(showLocation);
 
-        const buyTicketButton = document.createElement("button");
-        buyTicketButton.classList.add("shows__buyTicketsButton");
-        showLocation.innerText("BUY TICKETS");
-        showListWrapper.appendChild(showListWrapper);
+        for (let i=0; i<showsListArr.length; i++ ){
+
+            const showItem = document.createElement("div");
+            showItem.classList.add("shows__desktopShowItem");
+            showListWrapper.appendChild(showItem);
+
+            const showDate = document.createElement("p");
+            showDate.innerText(showsListArr[i].date);
+            showItem.appendChild(showDate);
+
+            const showVenue = document.createElement("p");
+            showVenue.innerText(showsListArr[i].venue);
+            showItem.appendChild(showVenue);
+
+            const showLocation = document.createElement("p");
+            showLocation.innerText(showsListArr[i].location);
+            showItem.appendChild(showLocation);
+
+            const buyTicketButton = document.createElement("button");
+            buyTicketButton.classList.add("shows__buyTicketsButton");
+            showLocation.innerText("BUY TICKETS");
+            showItem.appendChild(showListWrapper);
+
 
         }
 
-    }
-
-    if (mediaQueryTablet.matches) {
+        return showsDesktop;
 
 
     }
