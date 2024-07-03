@@ -75,6 +75,7 @@ function displayUpcomingShows() {
         showsMobile.appendChild(dates);
         const showDate = document.createElement("p");
         showDate.innerText = showsListArr[i].date;
+        showDate.style.fontWeight = "bold";
         showsMobile.appendChild(showDate);
 
         const venues = document.createElement("h3");
@@ -95,7 +96,6 @@ function displayUpcomingShows() {
         buyTicketButton.classList.add("shows__buyTicketsButton");
         buyTicketButton.innerText = "BUY TICKETS";
         showsMobile.appendChild(buyTicketButton);
-
 
     }
 
@@ -136,6 +136,7 @@ function displayUpcomingShows() {
 
         let showDate = document.createElement("p");
         showDate.innerText = showsListArr[i].date;
+        showDate.style.fontWeight = "bold";
         showItem.appendChild(showDate);
 
         let showVenue = document.createElement("p");
@@ -150,6 +151,7 @@ function displayUpcomingShows() {
         buyTicketButton.classList.add("shows__buyTicketsButton");
         buyTicketButton.innerText = "BUY TICKETS";
         showItem.appendChild(buyTicketButton);
+
 
     }
 

@@ -52,11 +52,18 @@ h1 {
   font-family: "AvenirDemi";
   font-size: 1.5rem;
   line-height: 2rem;
+  margin: 0;
 }
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 3.75rem;
     line-height: 4.25rem;
+    min-width: 65%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  h1 {
+    min-width: 50%;
   }
 }
 
@@ -194,9 +201,15 @@ button {
   border: 0px;
   justify-content: center;
   padding: 1rem 2rem;
+  margin: 1rem 0rem;
 }
 .shows__buyTicketsButton--hidden {
   visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+  .shows__buyTicketsButton {
+    margin: 0;
+  }
 }
 .shows__desktop {
   display: none;

@@ -86,6 +86,7 @@ let createComment = (name, time, content) => {
   commentCard.appendChild(commentContent);
 
   return commentCardWrapper;
+  
 }
 
 

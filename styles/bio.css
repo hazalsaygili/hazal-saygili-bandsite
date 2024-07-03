@@ -353,18 +353,18 @@ button {
   width: 100%;
   background-color: #FAFAFA;
 }
-@media screen and (min-width: 768px) {
-  .commentFlow__textFields {
-    min-height: 3rem;
-    padding: 1rem;
-  }
-}
 .commentFlow__textFields--error {
   border: 1px solid #D22D2D;
 }
 .commentFlow__textFields:focus {
   outline: none;
   border: 1px solid #323232;
+}
+@media screen and (min-width: 768px) {
+  .commentFlow__textFields {
+    min-height: 3rem;
+    padding: 1rem;
+  }
 }
 .commentFlow__label {
   padding-top: 0.5rem;
