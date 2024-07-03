@@ -23,6 +23,19 @@ form.addEventListener("submit", (event) => {
   const name = event.target.commentName.value;
   const time = new Date().toLocaleDateString('en-us');
   const content = event.target.commentContent.value;
+
+  event.target.commentName.classList.remove("commentFlow__textFields--error");
+  if(!name){
+    event.target.commentName.classList.add("commentFlow__textFields--error");
+    return;
+  }
+
+  event.target.commentContent.classList.remove("commentFlow__textFields--error");
+  if(!content){
+    event.target.commentContent.classList.add("commentFlow__textFields--error");
+    return;
+  }
+
   let newComment = {name, time, content};
   commentArray.push(newComment);
   form.reset();
@@ -35,7 +48,7 @@ form.addEventListener("submit", (event) => {
     commentWrappers.push(commentCardWrapper);
     commentList.appendChild(commentCardWrapper);
   }
- 
+
 
 });
 

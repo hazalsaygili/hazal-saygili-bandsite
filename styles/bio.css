@@ -307,7 +307,7 @@ button {
 }
 .commentFlow__Img {
   align-self: start;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   border-radius: 50%;
   width: 2rem;
   height: 2rem;
@@ -325,7 +325,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0rem 1rem;
+  padding: 1rem 1rem;
   width: 100%;
 }
 .commentFlow__commentSubmitButton {
@@ -358,6 +358,13 @@ button {
     min-height: 3rem;
     padding: 1rem;
   }
+}
+.commentFlow__textFields--error {
+  border: 1px solid #D22D2D;
+}
+.commentFlow__textFields:focus {
+  outline: none;
+  border: 1px solid #323232;
 }
 .commentFlow__label {
   padding-top: 0.5rem;
@@ -393,7 +400,7 @@ button {
 }
 .commentFlow__commentCardWrapper {
   display: flex;
-  border-bottom: 1px solid #E1E1E1;
+  border-top: 1px solid #E1E1E1;
 }
 .commentFlow__commentedNameTimeWrapper {
   display: flex;
