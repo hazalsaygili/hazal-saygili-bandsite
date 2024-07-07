@@ -1,22 +1,22 @@
 @font-face {
-  font-family: "AvenirRegular";
+  font-family: "Avenir";
   font-weight: 400;
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
-  font-family: "AvenirBold";
+  font-family: "Avenir";
   font-weight: 700;
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
 }
 @font-face {
-  font-family: "AvenirDemi";
+  font-family: "Avenir";
   font-weight: 600;
   src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
 }
 html {
   box-sizing: border-box;
   margin: 0;
-  font-family: "AvenirRegular";
+  font-family: "Avenir", "Serif", "Sans-serif";
 }
 
 *,
@@ -49,7 +49,7 @@ a {
 }
 
 h1 {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 0;
@@ -68,12 +68,12 @@ h1 {
 }
 
 h2 {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 0;
   padding: 1.5rem 0 1rem 0;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 @media screen and (min-width: 768px) {
   h2 {
@@ -84,7 +84,7 @@ h2 {
 }
 
 h3 {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
@@ -132,7 +132,7 @@ button {
   }
 }
 .navbar__title {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1.5rem;
   padding: 1rem;
 }
@@ -157,18 +157,18 @@ button {
   }
 }
 .navbar__link {
-  color: #E1E1E1;
+  color: #e1e1e1;
   text-decoration: none;
   padding: 1rem 0 1rem 0;
 }
 .navbar__link:hover {
-  color: #FFFFFF;
-  border-bottom: 3px solid #FFFFFF;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
 }
 .navbar__link--active {
-  color: #FFFFFF;
-  font-family: "AvenirDemi";
-  border-bottom: 3px solid #FFFFFF;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 3px solid #ffffff;
 }
 
 .shows h2 {
@@ -180,10 +180,20 @@ button {
     font-size: 2.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows h2 {
+    width: 20%;
+  }
+}
 .shows h3 {
   font-size: 0.8rem;
-  color: #AFAFAF;
+  color: #afafaf;
   margin: 0;
+}
+@media screen and (min-width: 1280px) {
+  .shows__wrapper {
+    display: flex;
+  }
 }
 .shows__mobile {
   display: flex;
@@ -196,7 +206,7 @@ button {
 }
 .shows__buyTicketsButton {
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 0.2rem;
   border: 0px;
   justify-content: center;
@@ -220,30 +230,37 @@ button {
     flex-direction: column;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows__desktop {
+    width: 80%;
+  }
+}
 .shows__desktopHeaderItem {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
   padding: 1rem;
 }
 .shows__desktopShowItem {
   display: flex;
-  justify-content: space-evenly;
-  border-bottom: 1px solid #E1E1E1;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1e1e1;
   padding: 1rem;
   align-items: center;
 }
 .shows__desktopShowItem:hover {
   cursor: pointer;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
-.shows__desktopShowItem:target {
-  background-color: #E1E1E1;
+.shows__desktopShowItem:active {
+  background-color: #e1e1e1;
 }
 
 .footer {
   margin-top: 1rem;
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   width: 100%;
 }
@@ -253,7 +270,7 @@ button {
   }
 }
 .footer__subtitle {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -325,7 +342,7 @@ button {
   }
 }
 .hero__header {
-  color: #FFFFFF;
+  color: #ffffff;
   max-height: 60%;
 }
 .hero__image {

@@ -3,349 +3,341 @@
 @use "./partials/typography" as *;
 
 html {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'AvenirRegular';
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Avenir", "Serif", "Sans-serif";
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-    }
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-
 footer {
-    @include tablet {
-        line-height: 1.25rem;
-    }
-
+  @include tablet {
+    line-height: 1.25rem;
+  }
 }
 
 h1 {
-    font-family: "AvenirDemi";
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin:0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
 
-    @include tablet {
-        font-size: 3.75rem;
-        line-height: 4.25rem;
-        min-width: 65%;
-    }
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    min-width: 65%;
+  }
 
-    @include desktop {
-        min-width: 50%;
-    }
-
+  @include desktop {
+    min-width: 50%;
+  }
 }
 
 h2 {
-    font-family: "AvenirDemi";
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin: 0;
-    padding: 1.5rem 0 1rem 0;
-    color: $white;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+  padding: 1.5rem 0 1rem 0;
+  color: $white;
 
-    @include tablet {
-        font-size: 2.25rem;
-        line-height: 2.75rem;
-        padding: 3rem 0 2.25rem 0;
-    }
-
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding: 3rem 0 2.25rem 0;
+  }
 }
 
 h3 {
-    font-family: "AvenirDemi";
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 
-    @include tablet {
-        font-size: 2rem;
-        line-height: 1.5rem;
-    }
+  @include tablet {
+    font-size: 2rem;
+    line-height: 1.5rem;
+  }
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-
 
 label,
 input,
 button {
-    display: flex;
+  display: flex;
 }
 
 .container {
-    padding: 0 1rem;
+  padding: 0 1rem;
 
-    @include tablet {
-        padding: 0 2.25rem;
-    }
+  @include tablet {
+    padding: 0 2.25rem;
+  }
 
-    @include desktop {
-        padding: 0 5rem;
-    }
-
+  @include desktop {
+    padding: 0 5rem;
+  }
 }
 
 .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $bandsite-black;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bandsite-black;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 1.5rem;
+    padding: 1rem;
 
     @include tablet {
-        flex-direction: row;
+      padding: 1rem;
+    }
+  }
+
+  &__panel {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      margin-left: 4rem;
+    }
+  }
+
+  &__link {
+    color: $mercury;
+    text-decoration: none;
+    padding: 1rem 0 1rem 0;
+
+    &:hover {
+      color: $white;
+      border-bottom: 3px solid $white;
     }
 
-    &__title {
-        color: $white;
-        font-size: 1.5rem;
-        padding: 1rem;
-
-        @include tablet {
-            padding: 1rem;
-        }
-
+    &--active {
+      color: $white;
+      font-weight: 600;
+      border-bottom: 3px solid $white;
     }
-
-    &__panel {
-        display: flex;
-        list-style: none;
-        width: 100%;
-        justify-content: space-evenly;
-        padding: 0;
-
-        @include tablet {
-            display: flex;
-            justify-content: flex-start;
-            gap: 2rem;
-            margin-left: 4rem;
-        }
-
-    }
-
-    &__link {
-        color: $mercury;
-        text-decoration: none;
-        padding: 1rem 0 1rem 0;
-
-        &:hover {
-            color: $white;
-            border-bottom: 3px solid $white;
-
-        }
-
-        &--active {
-            color: $white;
-            font-family: "AvenirDemi";
-            border-bottom: 3px solid $white;
-        }
-    }
+  }
 }
 
 .shows {
-
-    h2 {
-        font-size: 1.5rem;
-        color: $bandsite-black;
-        @include tablet {
-            font-size: 2.25rem;
-        }
+  h2 {
+    font-size: 1.5rem;
+    color: $bandsite-black;
+    @include tablet {
+      font-size: 2.25rem;
     }
-
-    h3 {
-        font-size: 0.8rem;
-        color: $silver;
-        margin: 0;
+    @include desktop {
+        width: 20%;
     }
+  }
 
-    &__mobile {
+  h3 {
+    font-size: 0.8rem;
+    color: $silver;
+    margin: 0;
+  }
+
+  &__wrapper{
+    @include desktop {
         display: flex;
-        flex-direction: column;
+    }
+  }
 
-        @include tablet {
-            display: none;
-        }
+  &__mobile {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__buyTicketsButton {
+    background-color: $bandsite-black;
+    color: $white;
+    border-radius: 0.2rem;
+    border: 0px;
+    justify-content: center;
+    padding: 1rem 2rem;
+    margin: 1rem 0rem;
+
+    &--hidden {
+      visibility: hidden;
     }
 
-    &__buyTicketsButton {
-        background-color: $bandsite-black;
-        color: $white;
-        border-radius: 0.2rem;
-        border: 0px;
-        justify-content: center;
-        padding: 1rem 2rem;
-        margin: 1rem 0rem;
+    @include tablet {
+      margin: 0;
+    }
+  }
 
-        &--hidden {
-            visibility: hidden;
-        }
+  &__desktop {
+    display: none;
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+    @include desktop {
+        width:80%;
+    }
+  }
 
-        @include tablet{
-            margin:0;
-        }
+  &__desktopHeaderItem {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  &__desktopShowItem {
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 1px solid $mercury;
+    padding: 1rem;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $alabaster;
     }
 
-    &__desktop {
-        display: none;
-
-        @include tablet {
-            display: flex;
-            flex-direction: column;
-        }
-
+    &:active {
+      background-color: $mercury;
     }
-
-    &__desktopHeaderItem {
-        display: flex;
-        justify-content: space-evenly;
-        padding: 1rem;
-    }
-
-    &__desktopShowItem {
-        display: flex;
-        justify-content: space-evenly;
-        border-bottom: 1px solid $mercury;
-        padding: 1rem;
-        align-items: center;
-
-        &:hover {
-            cursor: pointer;
-            background-color: $alabaster;
-
-        }
-
-        &:target {
-            background-color: $mercury;
-        }
-
-
-    }
-
+  }
 }
 
 .footer {
-    margin-top: 1rem;
-    background-color: $bandsite-black;
-    color: $white;
-    position: relative;
-    width: 100%;
+  margin-top: 1rem;
+  background-color: $bandsite-black;
+  color: $white;
+  position: relative;
+  width: 100%;
 
+  @include tablet {
+    margin-top: 2rem;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
 
     @include tablet {
-        margin-top: 2rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__brandname {
+    font-size: 1.5rem;
+    line-height: 1.375rem;
+
+    @include tablet {
+      position: absolute;
+      top: 2rem;
+      right: 4rem;
     }
 
-    &__subtitle {
-        font-family: 'AvenirDemi';
-        font-size: 0.8125rem;
-        line-height: 1.125rem;
-
-        @include tablet {
-            font-size: 0.875rem;
-            line-height: 1.375rem;
-        }
+    @include desktop {
+      right: 6rem;
     }
+  }
 
-    &__wrapper {
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-            align-items: center;
-            justify-content: flex-start;
-        }
+  &__copyright {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 4rem;
     }
+  }
 
-    &__brandname {
-        font-size: 1.5rem;
-        line-height: 1.375rem;
-
-        @include tablet {
-            position: absolute;
-            top: 2rem;
-            right: 4rem;
-        }
-
-        @include desktop {
-            right: 6rem;
-
-        }
-    }
-
-    &__copyright {
-        margin-bottom: 0;
-        padding-bottom: 2rem;
-    }
-
-    &__contact {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-            flex-direction: row;
-            gap: 4rem;
-        }
-
-    }
-
-    &__socialMediaIcons {
-        display: flex;
-        gap: 1rem;
-        padding-top: 1rem;
-    }
-
+  &__socialMediaIcons {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 .hero {
-    height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-image: linear-gradient(
+      rgba(32, 32, 32, 0.5),
+      rgba(32, 32, 32, 0.5)
+    ),
+    url(../assets/images/hero-shows.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__header {
+    color: $white;
+    max-height: 60%;
+  }
+
+  &__image {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    background-image: linear-gradient(rgba(32, 32, 32, 0.5),
-            rgba(32, 32, 32, 0.5)),
-        url(../assets/images/hero-shows.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-
-    @include tablet {
-        flex-direction: row;
-
-    }
-
-    &__header {
-        color: $white;
-        max-height: 60%;
-
-    }
-
-    &__image {
-        display: flex;
-        max-width: 100%;
-    }
-
+    max-width: 100%;
+  }
 }

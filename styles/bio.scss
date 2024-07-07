@@ -2,453 +2,424 @@
 @use "./partials/mixins" as *;
 @use "./partials/typography" as *;
 
-
 html {
-    box-sizing: border-box;
-    margin: 0;
-    font-family: 'AvenirRegular';
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Avenir", "Serif", "Sans-serif";
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8125rem;
-    line-height: 1.125rem;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 
-    @include tablet {
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-    }
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-
 footer {
-    @include tablet {
-        line-height: 1.25rem;
-    }
-
+  @include tablet {
+    line-height: 1.25rem;
+  }
 }
 
 h1 {
-    font-family: "AvenirDemi";
-    font-size: 1.5rem;
-    line-height: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
 
-    @include tablet {
-        font-size: 3.75rem;
-        line-height: 4.25rem;
-    }
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
 }
 
 h2 {
-    font-family: "AvenirDemi";
-    font-size: 1.5rem;
-    line-height: 2rem;
-    margin: 0;
-    padding: 1.5rem 0 1rem 0;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 0;
+  padding: 1.5rem 0 1rem 0;
 
-    @include tablet {
-        font-size: 2.25rem;
-        line-height: 2.75rem;
-        padding: 3rem 0 2.25rem 0;
-    }
-
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    padding: 3rem 0 2.25rem 0;
+  }
 }
 
 h3 {
-    font-family: "AvenirDemi";
-    font-size: 0.875rem;
-    line-height: 1.375rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 
-    @include tablet {
-        font-size: 2rem;
-        line-height: 1.5rem;
-    }
+  @include tablet {
+    font-size: 2rem;
+    line-height: 1.5rem;
+  }
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-
 
 label,
 input,
 button {
-    display: flex;
+  display: flex;
 }
 
 .container {
-    padding: 0 1rem;
+  padding: 0 1rem;
 
-    @include tablet {
-        padding: 0 2.25rem;
-    }
+  @include tablet {
+    padding: 0 2.25rem;
+  }
 
-    @include desktop {
-        padding: 0 5rem;
-    }
-
+  @include desktop {
+    padding: 0 5rem;
+  }
 }
 
 .navbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: $bandsite-black;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $bandsite-black;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: row;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 1.5rem;
+    padding: 1rem;
 
     @include tablet {
-        flex-direction: row;
+      padding: 1rem;
+    }
+  }
+
+  &__panel {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      gap: 2rem;
+      margin-left: 4rem;
+    }
+  }
+
+  &__link {
+    color: $mercury;
+    text-decoration: none;
+    padding: 1rem 0 1rem 0;
+
+    &:hover {
+      color: $white;
+      border-bottom: 3px solid $white;
     }
 
-    &__title {
-        color: $white;
-        font-size: 1.5rem;
-        padding: 1rem;
-
-        @include tablet {
-            padding: 1rem;
-        }
-
+    &--active {
+      color: $white;
+      font-weight: 600;
+      border-bottom: 3px solid $white;
     }
-
-    &__panel {
-        display: flex;
-        list-style: none;
-        width: 100%;
-        justify-content: space-evenly;
-        padding: 0;
-
-        @include tablet {
-            display: flex;
-            justify-content: flex-start;
-            gap: 2rem;
-            margin-left: 4rem;
-        }
-
-    }
-
-    &__link {
-        color: $mercury;
-        text-decoration: none;
-        padding: 1rem 0 1rem 0;
-
-        &:hover {
-            color: $white;
-            border-bottom: 3px solid $white;
-
-        }
-
-        &--active {
-            color: $white;
-            font-family: "AvenirDemi";
-            border-bottom: 3px solid $white;
-        }
-    }
+  }
 }
 
 .footer {
-    margin-top: 1rem;
-    background-color: $bandsite-black;
-    color: $white;
-    position: relative;
-    width: 100%;
+  margin-top: 1rem;
+  background-color: $bandsite-black;
+  color: $white;
+  position: relative;
+  width: 100%;
 
+  @include tablet {
+    margin-top: 2rem;
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
 
     @include tablet {
-        margin-top: 2rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
+  }
+
+  &__wrapper {
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      gap: 3rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__brandname {
+    font-size: 1.5rem;
+    line-height: 1.375rem;
+
+    @include tablet {
+      position: absolute;
+      top: 2rem;
+      right: 4rem;
     }
 
-    &__subtitle {
-        font-family: 'AvenirDemi';
-        font-size: 0.8125rem;
-        line-height: 1.125rem;
-
-        @include tablet {
-            font-size: 0.875rem;
-            line-height: 1.375rem;
-        }
+    @include desktop {
+      right: 6rem;
     }
+  }
 
-    &__wrapper {
-        @include tablet {
-            display: flex;
-            flex-direction: row;
-            gap: 3rem;
-            align-items: center;
-            justify-content: flex-start;
-        }
+  &__copyright {
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 4rem;
     }
+  }
 
-    &__brandname {
-        font-size: 1.5rem;
-        line-height: 1.375rem;
-
-        @include tablet {
-            position: absolute;
-            top: 2rem;
-            right: 4rem;
-        }
-
-        @include desktop {
-            right: 6rem;
-
-        }
-    }
-
-    &__copyright {
-        margin-bottom: 0;
-        padding-bottom: 2rem;
-    }
-
-
-    &__contact {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-            flex-direction: row;
-            gap: 4rem;
-        }
-
-    }
-
-    &__socialMediaIcons {
-        display: flex;
-        gap: 1rem;
-        padding-top: 1rem;
-    }
-
+  &__socialMediaIcons {
+    display: flex;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
 }
 
 .hero {
-    height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      rgba(32, 32, 32, 0.5),
+      rgba(32, 32, 32, 0.5)
+    ),
+    url(../assets/images/hero-bio.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__header {
+    color: $white;
+    max-height: 60%;
+  }
+
+  &__image {
     display: flex;
-    align-items: center;
-    background-image: linear-gradient(rgba(32, 32, 32, 0.5),
-            rgba(32, 32, 32, 0.5)),
-        url(../assets/images/hero-bio.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    &__header {
-        color: $white;
-        max-height: 60%;
-    }
-
-    &__image {
-        display: flex;
-        max-width: 100%;
-    }
-
+    max-width: 100%;
+  }
 }
 
 .about {
-    &__wrapper {
-        @include tablet {
-            padding: 0 4rem;
-        }
+  &__wrapper {
+    @include tablet {
+      padding: 0 4rem;
     }
+  }
 
-    &__quote {
-        font-family: "AvenirDemi";
-        font-size: 1.5rem;
-        line-height: 2rem;
+  &__quote {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
 
+  &__quoteRef {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  &__content {
+    @include tablet {
+      display: flex;
+      gap: 1rem;
     }
+  }
 
-    &__quoteRef {
-        font-family: "AvenirDemi";
-        font-size: 1rem;
-    }
-
-    &__content {
-        @include tablet {
-            display: flex;
-            gap: 1rem;
-        }
-
-    }
-
-    &__image {
-        max-width: 100%;
-    }
-
+  &__image {
+    max-width: 100%;
+  }
 }
 
 .photogallery {
-    background-color: $alabaster;
+  background-color: $alabaster;
 
-    &__panel {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 1rem;
+  &__panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
+
+  &__image {
+    width: 100%;
+
+    @include tablet {
+      width: 30%;
     }
-
-    &__image {
-        width: 100%;
-
-        @include tablet {
-            width: 30%;
-        }
-    }
+  }
 }
 
-
-
 .commentFlow {
+  &__addCommentWrapper {
+    display: flex;
+    padding: 2rem 0;
 
-    &__addCommentWrapper {
-        display: flex;
-        padding: 2rem 0;
-
-        @include tablet {
-            padding: 0 4rem;
-        }
-
-        @include desktop {
-            padding: 0 8rem;
-
-        }
-
+    @include tablet {
+      padding: 0 4rem;
     }
 
-    &__Img {
-        align-self: start;
-        margin-top: 1.5rem;
-        border-radius: 50%;
-        width: 2rem;
-        height: 2rem;
+    @include desktop {
+      padding: 0 8rem;
+    }
+  }
 
-        @include tablet {
-            width: 3rem;
-            height: 3rem;
-        }
+  &__Img {
+    align-self: start;
+    margin-top: 1.5rem;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
 
-        &--anonym {
-            background-color: $silver;
-
-        }
+    @include tablet {
+      width: 3rem;
+      height: 3rem;
     }
 
-    &__addComment {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        padding: 1rem 1rem;
-        width: 100%;
+    &--anonym {
+      background-color: $silver;
+    }
+  }
+
+  &__addComment {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 1rem 1rem;
+    width: 100%;
+  }
+
+  &__commentSubmitButton {
+    width: 30%;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    align-self: flex-end;
+    justify-content: center;
+    background-color: $bandsite-black;
+    color: $white;
+    border-radius: 0.2rem;
+    border: 0px;
+    font-size: 90%;
+    line-height: 1.375rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $bandsite-darkblack;
+    }
+  }
+
+  &__textFields {
+    min-height: 2.25rem;
+    border-radius: 4px;
+    border: 1px solid $silver;
+    padding: 0.75rem;
+    width: 100%;
+    background-color: $alabaster;
+
+    &--error {
+      border: 1px solid #d22d2d;
     }
 
-    &__commentSubmitButton {
-        width: 30%;
-        margin-top: 1rem;
-        padding: 1rem 2rem;
-        align-self: flex-end;
-        justify-content: center;
-        background-color: $bandsite-black;
-        color: $white;
-        border-radius: 0.2rem;
-        border: 0px;
-        font-size: 90%;
-        line-height: 1.375rem;
-
-        &:hover {
-            cursor:pointer;
-            background-color: $bandsite-darkblack;
-        }
+    &:focus {
+      outline: none;
+      border: 1px solid $bandsite-black;
     }
 
-    &__textFields{
-        min-height: 2.25rem;
-        border-radius: 4px;
-        border: 1px solid $silver;
-        padding: 0.75rem;
-        width:100%;
-        background-color: $alabaster;
+    @include tablet {
+      min-height: 3rem;
+      padding: 1rem;
+    }
+  }
 
-        &--error {
-            border: 1px solid #D22D2D;
+  &__label {
+    padding-top: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: $silver;
+  }
 
-        }
+  &__commentList {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0;
 
-        &:focus {
-            outline: none;
-            border: 1px solid $bandsite-black;
-        }
-
-        @include tablet {
-            min-height: 3rem;
-            padding: 1rem;
-        }  
-    
+    @include tablet {
+      padding: 0 4rem;
     }
 
-    &__label {
-        padding-top: 0.5rem;
-        font-size: 0.75rem;
-        font-weight: bold;
-        color: $silver;
-
+    @include desktop {
+      padding: 0 8rem;
     }
 
-    &__commentList {
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        padding: 0 0;
-
-        @include tablet {
-            padding: 0 4rem;
-        }
-
-        @include desktop {
-            padding: 0 8rem;
-
-        }
-
-        &--formSubmit{
-            display:none;
-            transition: 0.2s;
-        }
-
+    &--formSubmit {
+      display: none;
+      transition: 0.2s;
     }
+  }
 
-    &__commentCard {
-        display: flex;
-        flex-direction: column;
-        padding: 0.5rem 1rem;
-        width: 100%;
+  &__commentCard {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
 
-    }
+  &__commentCardWrapper {
+    display: flex;
+    border-top: 1px solid $mercury;
+  }
 
-    &__commentCardWrapper {
-        display: flex;
-        border-top: 1px solid $mercury;
-    }
+  &__commentedNameTimeWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    &__commentedNameTimeWrapper {
-        display: flex;
-        justify-content: space-between;
-    }
+  &__commentedName {
+    font-weight: bold;
+  }
 
-    &__commentedName {
-        font-weight: bold;
-    }
-
-    &__commentedTime {
-        color: $silver;
-    }
-
+  &__commentedTime {
+    color: $silver;
+  }
 }

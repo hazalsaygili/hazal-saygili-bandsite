@@ -4,15 +4,15 @@ const form = document.querySelector(".commentFlow__addComment");
 let apiKey = "ac51252c-3c39-48f1-ade6-ee3f2ee13241";
 const bandSiteApi = new BandSiteApi(apiKey);
 
-
 form.addEventListener("submit", async (event) => {
-
   event.preventDefault();
   const name = event.target.commentName.value;
   const comment = event.target.commentContent.value;
 
   event.target.commentName.classList.remove("commentFlow__textFields--error");
-  event.target.commentContent.classList.remove("commentFlow__textFields--error");
+  event.target.commentContent.classList.remove(
+    "commentFlow__textFields--error"
+  );
   let isError = false;
   if (!name) {
     event.target.commentName.classList.add("commentFlow__textFields--error");
@@ -27,7 +27,7 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  let newComment = {name, comment};
+  let newComment = { name, comment };
   await bandSiteApi.postComment(newComment);
   form.reset();
   await displayCommentSection();
@@ -37,9 +37,8 @@ async function displayCommentSection() {
   let commentArray;
   try {
     commentArray = await bandSiteApi.getComments();
-  }
-  catch (error) {
-    console.error(error)
+  } catch (error) {
+    console.error(error);
   }
 
   const commentList = document.getElementById("comments");
@@ -48,15 +47,20 @@ async function displayCommentSection() {
   let commentWrappers = [];
 
   for (let i = 0; i < commentArray.length; i++) {
-    const date = new Date(commentArray[i].timestamp).toLocaleDateString('en-us');
-    const commentCardWrapper = createComment(commentArray[i].name, date, commentArray[i].comment);
+    const date = new Date(commentArray[i].timestamp).toLocaleDateString(
+      "en-us"
+    );
+    const commentCardWrapper = createComment(
+      commentArray[i].name,
+      date,
+      commentArray[i].comment
+    );
     commentWrappers.push(commentCardWrapper);
     commentList.appendChild(commentCardWrapper);
   }
 }
 
 let createComment = (name, time, content) => {
-
   const commentCardWrapper = document.createElement("div");
   commentCardWrapper.classList.add("commentFlow__commentCardWrapper");
 
@@ -89,7 +93,6 @@ let createComment = (name, time, content) => {
   commentCard.appendChild(commentContent);
 
   return commentCardWrapper;
-
-}
+};
 
 await displayCommentSection();

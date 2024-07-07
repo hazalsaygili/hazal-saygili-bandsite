@@ -1,22 +1,22 @@
 @font-face {
-  font-family: "AvenirRegular";
+  font-family: "Avenir";
   font-weight: 400;
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
 }
 @font-face {
-  font-family: "AvenirBold";
+  font-family: "Avenir";
   font-weight: 700;
   src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
 }
 @font-face {
-  font-family: "AvenirDemi";
+  font-family: "Avenir";
   font-weight: 600;
   src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
 }
 html {
   box-sizing: border-box;
   margin: 0;
-  font-family: "AvenirRegular";
+  font-family: "Avenir", "Serif", "Sans-serif";
 }
 
 *,
@@ -49,7 +49,7 @@ a {
 }
 
 h1 {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 }
@@ -61,7 +61,7 @@ h1 {
 }
 
 h2 {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 0;
@@ -76,7 +76,7 @@ h2 {
 }
 
 h3 {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
@@ -124,7 +124,7 @@ button {
   }
 }
 .navbar__title {
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 1.5rem;
   padding: 1rem;
 }
@@ -149,24 +149,24 @@ button {
   }
 }
 .navbar__link {
-  color: #E1E1E1;
+  color: #e1e1e1;
   text-decoration: none;
   padding: 1rem 0 1rem 0;
 }
 .navbar__link:hover {
-  color: #FFFFFF;
-  border-bottom: 3px solid #FFFFFF;
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
 }
 .navbar__link--active {
-  color: #FFFFFF;
-  font-family: "AvenirDemi";
-  border-bottom: 3px solid #FFFFFF;
+  color: #ffffff;
+  font-weight: 600;
+  border-bottom: 3px solid #ffffff;
 }
 
 .footer {
   margin-top: 1rem;
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   width: 100%;
 }
@@ -176,7 +176,7 @@ button {
   }
 }
 .footer__subtitle {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -241,7 +241,7 @@ button {
   background-repeat: no-repeat;
 }
 .hero__header {
-  color: #FFFFFF;
+  color: #ffffff;
   max-height: 60%;
 }
 .hero__image {
@@ -255,12 +255,12 @@ button {
   }
 }
 .about__quote {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 .about__quoteRef {
-  font-family: "AvenirDemi";
+  font-weight: 600;
   font-size: 1rem;
 }
 @media screen and (min-width: 768px) {
@@ -274,7 +274,7 @@ button {
 }
 
 .photogallery {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .photogallery__panel {
   display: flex;
@@ -319,7 +319,7 @@ button {
   }
 }
 .commentFlow__Img--anonym {
-  background-color: #AFAFAF;
+  background-color: #afafaf;
 }
 .commentFlow__addComment {
   display: flex;
@@ -335,7 +335,7 @@ button {
   align-self: flex-end;
   justify-content: center;
   background-color: #323232;
-  color: #FFFFFF;
+  color: #ffffff;
   border-radius: 0.2rem;
   border: 0px;
   font-size: 90%;
@@ -348,13 +348,13 @@ button {
 .commentFlow__textFields {
   min-height: 2.25rem;
   border-radius: 4px;
-  border: 1px solid #AFAFAF;
+  border: 1px solid #afafaf;
   padding: 0.75rem;
   width: 100%;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 .commentFlow__textFields--error {
-  border: 1px solid #D22D2D;
+  border: 1px solid #d22d2d;
 }
 .commentFlow__textFields:focus {
   outline: none;
@@ -370,7 +370,7 @@ button {
   padding-top: 0.5rem;
   font-size: 0.75rem;
   font-weight: bold;
-  color: #AFAFAF;
+  color: #afafaf;
 }
 .commentFlow__commentList {
   margin: 0 auto;
@@ -400,7 +400,7 @@ button {
 }
 .commentFlow__commentCardWrapper {
   display: flex;
-  border-top: 1px solid #E1E1E1;
+  border-top: 1px solid #e1e1e1;
 }
 .commentFlow__commentedNameTimeWrapper {
   display: flex;
@@ -410,5 +410,5 @@ button {
   font-weight: bold;
 }
 .commentFlow__commentedTime {
-  color: #AFAFAF;
+  color: #afafaf;
 }/*# sourceMappingURL=bio.css.map */

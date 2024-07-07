@@ -1,140 +1,124 @@
 import BandSiteApi from "./band-site-api.js";
 
-
 let apiKey = "ac51252c-3c39-48f1-ade6-ee3f2ee13241";
 const bandSiteApi = new BandSiteApi(apiKey);
-
 
 let showsListArr = await bandSiteApi.getShows();
 
 const options = {
-    weekday: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric"
-  };
-
+  weekday: "short",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
 
 window.addEventListener("load", (event) => {
-
-    displayUpcomingShows();
-
-
+  displayUpcomingShows();
 });
 
 function displayUpcomingShows() {
+  const showListSection = document.createElement("section");
+  showListSection.classList.add("shows", "container");
 
-    const showListSection = document.createElement("section");
-    showListSection.classList.add("shows", "container");
+  const showsBody = document.getElementById("home");
+  const footer = document.getElementById("footer");
+  showsBody.insertBefore(showListSection, footer);
 
-    const showsBody = document.getElementById("home");
-    const footer = document.getElementById("footer");
-    showsBody.insertBefore(showListSection, footer);
+  const showListWrapper = document.createElement("div");
+  showListWrapper.classList.add("shows__wrapper");
+  showListSection.appendChild(showListWrapper);
 
-    const showListWrapper = document.createElement("div");
-    showListWrapper.classList.add("shows__wrapper");
-    showListSection.appendChild(showListWrapper);
+  const showListTitle = document.createElement("h2");
+  showListTitle.innerHTML = "Shows";
+  showListWrapper.appendChild(showListTitle);
 
-    const showListTitle = document.createElement("h2");
-    showListTitle.innerHTML = "Shows";
-    showListWrapper.appendChild(showListTitle);
+  //create shows desktop design
+  const showsDesktop = document.createElement("div");
+  showsDesktop.classList.add("shows__desktop");
+  showListWrapper.appendChild(showsDesktop);
 
+  const showsDesktopHeaders = document.createElement("div");
+  showsDesktopHeaders.classList.add("shows__desktopHeaderItem");
+  showsDesktop.appendChild(showsDesktopHeaders);
 
-    //create shows mobile design
-    const showsMobile = document.createElement("div");
-    showsMobile.classList.add("shows__mobile");
-    showListWrapper.appendChild(showsMobile);
+  const dates = document.createElement("h3");
+  dates.innerText = "DATE";
+  showsDesktopHeaders.appendChild(dates);
 
-    for (let i = 0; i < showsListArr.length; i++) {
+  const venues = document.createElement("h3");
+  venues.innerText = "VENUE";
+  showsDesktopHeaders.appendChild(venues);
 
-        const dates = document.createElement("h3");
-        dates.innerText = "DATE";
-        showsMobile.appendChild(dates);
-        const showDate = document.createElement("p");
-        showDate.innerText = new Date(showsListArr[i].date).toLocaleDateString('en-us', options).replace(/,/g, "");
-        showDate.style.fontWeight = "bold";
-        showsMobile.appendChild(showDate);
+  const locations = document.createElement("h3");
+  locations.innerText = "LOCATION";
+  showsDesktopHeaders.appendChild(locations);
 
-        const venues = document.createElement("h3");
-        venues.innerText = "VENUE";
-        showsMobile.appendChild(venues);
-        const showVenue = document.createElement("p");
-        showVenue.innerText = showsListArr[i].place;
-        showsMobile.appendChild(showVenue);
+  const buyTicketButton = document.createElement("button");
+  buyTicketButton.classList.add("shows__buyTicketsButton");
+  buyTicketButton.classList.add("shows__buyTicketsButton--hidden");
+  buyTicketButton.innerText = "BUY TICKETS";
+  showsDesktopHeaders.appendChild(buyTicketButton);
 
-        const locations = document.createElement("h3");
-        locations.innerText = "LOCATION";
-        showsMobile.appendChild(locations);
-        const showLocation = document.createElement("p");
-        showLocation.innerText = showsListArr[i].location;
-        showsMobile.appendChild(showLocation);
+  for (let i = 0; i < showsListArr.length; i++) {
+    let showItem = document.createElement("div");
+    showItem.classList.add("shows__desktopShowItem");
+    showsDesktop.appendChild(showItem);
 
-        const buyTicketButton = document.createElement("button");
-        buyTicketButton.classList.add("shows__buyTicketsButton");
-        buyTicketButton.innerText = "BUY TICKETS";
-        showsMobile.appendChild(buyTicketButton);
+    let showDate = document.createElement("p");
+    showDate.innerText = new Date(showsListArr[i].date)
+      .toLocaleDateString("en-us", options)
+      .replace(/,/g, "");
+    showDate.style.fontWeight = "bold";
+    showItem.appendChild(showDate);
 
-    }
+    let showVenue = document.createElement("p");
+    showVenue.innerText = showsListArr[i].place;
+    showItem.appendChild(showVenue);
 
-
-    //create shows desktop design
-    const showsDesktop = document.createElement("div");
-    showsDesktop.classList.add("shows__desktop");
-    showListWrapper.appendChild(showsDesktop);
-
-    const showsDesktopHeaders = document.createElement("div");
-    showsDesktopHeaders.classList.add("shows__desktopHeaderItem");
-    showsDesktop.appendChild(showsDesktopHeaders);
-
-    const dates = document.createElement("h3");
-    dates.innerText = "DATE";
-    showsDesktopHeaders.appendChild(dates);
-
-    const venues = document.createElement("h3");
-    venues.innerText = "VENUE";
-    showsDesktopHeaders.appendChild(venues);
-
-    const locations = document.createElement("h3");
-    locations.innerText = "LOCATION";
-    showsDesktopHeaders.appendChild(locations);
+    const showLocation = document.createElement("p");
+    showLocation.innerText = showsListArr[i].location;
+    showItem.appendChild(showLocation);
 
     const buyTicketButton = document.createElement("button");
     buyTicketButton.classList.add("shows__buyTicketsButton");
-    buyTicketButton.classList.add("shows__buyTicketsButton--hidden");
     buyTicketButton.innerText = "BUY TICKETS";
-    showsDesktopHeaders.appendChild(buyTicketButton);
+    showItem.appendChild(buyTicketButton);
+  }
 
+  //create shows mobile design
+  const showsMobile = document.createElement("div");
+  showsMobile.classList.add("shows__mobile");
+  showListWrapper.appendChild(showsMobile);
 
-    for (let i = 0; i < showsListArr.length; i++) {
+  for (let i = 0; i < showsListArr.length; i++) {
+    const dates = document.createElement("h3");
+    dates.innerText = "DATE";
+    showsMobile.appendChild(dates);
+    const showDate = document.createElement("p");
+    showDate.innerText = new Date(showsListArr[i].date)
+      .toLocaleDateString("en-us", options)
+      .replace(/,/g, "");
+    showDate.style.fontWeight = "bold";
+    showsMobile.appendChild(showDate);
 
-        let showItem = document.createElement("div");
-        showItem.classList.add("shows__desktopShowItem");
-        showsDesktop.appendChild(showItem);
+    const venues = document.createElement("h3");
+    venues.innerText = "VENUE";
+    showsMobile.appendChild(venues);
+    const showVenue = document.createElement("p");
+    showVenue.innerText = showsListArr[i].place;
+    showsMobile.appendChild(showVenue);
 
-        let showDate = document.createElement("p");
-        showDate.innerText = new Date(showsListArr[i].date).toLocaleDateString('en-us', options).replace(/,/g, "");
-        showDate.style.fontWeight = "bold";
-        showItem.appendChild(showDate);
+    const locations = document.createElement("h3");
+    locations.innerText = "LOCATION";
+    showsMobile.appendChild(locations);
+    const showLocation = document.createElement("p");
+    showLocation.innerText = showsListArr[i].location;
+    showsMobile.appendChild(showLocation);
 
-        let showVenue = document.createElement("p");
-        showVenue.innerText = showsListArr[i].place;
-        showItem.appendChild(showVenue);
-
-        const showLocation = document.createElement("p");
-        showLocation.innerText = showsListArr[i].location;
-        showItem.appendChild(showLocation);
-
-        const buyTicketButton = document.createElement("button");
-        buyTicketButton.classList.add("shows__buyTicketsButton");
-        buyTicketButton.innerText = "BUY TICKETS";
-        showItem.appendChild(buyTicketButton);
-
-
-    }
+    const buyTicketButton = document.createElement("button");
+    buyTicketButton.classList.add("shows__buyTicketsButton");
+    buyTicketButton.innerText = "BUY TICKETS";
+    showsMobile.appendChild(buyTicketButton);
+  }
 
 }
-
-
-
-
-
