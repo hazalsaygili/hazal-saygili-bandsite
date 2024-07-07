@@ -1,41 +1,18 @@
-let showsListArr = [
-    {
-        date: "Mon Sept 09 2024",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA",
-    },
+import BandSiteApi from "./band-site-api.js";
 
-    {
-        date: "Tue Sept 17 2024",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA",
-    },
 
-    {
-        date: "Sat Oct 12 2024",
-        venue: "View Lounge",
-        location: "San Francisco, CA",
-    },
+let apiKey = "ac51252c-3c39-48f1-ade6-ee3f2ee13241";
+const bandSiteApi = new BandSiteApi(apiKey);
 
-    {
-        date: "Sat Nov 16 2024",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA",
-    },
 
-    {
-        date: "Fri Nov 29 2024",
-        venue: "Moscow Center",
-        location: "San Francisco, CA",
-    },
+let showsListArr = await bandSiteApi.getShows();
 
-    {
-        date: "Wed Dec 18 2024",
-        venue: "Press Club",
-        location: "San Francisco, CA",
-    },
-
-]
+const options = {
+    weekday: "short",
+    year: "numeric",
+    month: "short",
+    day: "numeric"
+  };
 
 
 window.addEventListener("load", (event) => {
@@ -74,7 +51,7 @@ function displayUpcomingShows() {
         dates.innerText = "DATE";
         showsMobile.appendChild(dates);
         const showDate = document.createElement("p");
-        showDate.innerText = showsListArr[i].date;
+        showDate.innerText = new Date(showsListArr[i].date).toLocaleDateString('en-us', options).replace(/,/g, "");
         showDate.style.fontWeight = "bold";
         showsMobile.appendChild(showDate);
 
@@ -82,7 +59,7 @@ function displayUpcomingShows() {
         venues.innerText = "VENUE";
         showsMobile.appendChild(venues);
         const showVenue = document.createElement("p");
-        showVenue.innerText = showsListArr[i].venue;
+        showVenue.innerText = showsListArr[i].place;
         showsMobile.appendChild(showVenue);
 
         const locations = document.createElement("h3");
@@ -135,12 +112,12 @@ function displayUpcomingShows() {
         showsDesktop.appendChild(showItem);
 
         let showDate = document.createElement("p");
-        showDate.innerText = showsListArr[i].date;
+        showDate.innerText = new Date(showsListArr[i].date).toLocaleDateString('en-us', options).replace(/,/g, "");
         showDate.style.fontWeight = "bold";
         showItem.appendChild(showDate);
 
         let showVenue = document.createElement("p");
-        showVenue.innerText = showsListArr[i].venue;
+        showVenue.innerText = showsListArr[i].place;
         showItem.appendChild(showVenue);
 
         const showLocation = document.createElement("p");

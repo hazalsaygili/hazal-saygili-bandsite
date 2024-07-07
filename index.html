@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/bio.css">
-    <script src="./scripts/index-page.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type ="module" src="./scripts/index-page.js"></script>
 
 </head>
 
@@ -21,8 +22,6 @@
 
     <section class="hero container">
         <h1 class="hero__header"> The Bees Knees </h1>
-        <!-- <img src="./assets/images/hero-bio.jpg" class="hero__image"> -->
-
     </section>
 
     <main class="about container">
@@ -77,7 +76,6 @@
 
     <section class="commentFlow container">
         <h2>Join the Conversation</h2>
-
         <div class="commentFlow__addCommentWrapper">
             <img src="./assets/images/Mohan-muruge.jpg" class="commentFlow__Img">
             <form class="commentFlow__addComment">
@@ -94,51 +92,6 @@
 
         <ul class="commentFlow__commentList" id="comments">
 
-            <div class="commentFlow__commentCardWrapper">
-                <div class="commentFlow__Img commentFlow__Img--anonym"></div>
-                <li class="commentFlow__commentCard">
-                    <div class="commentFlow__commentedNameTimeWrapper">
-                        <p class="commentFlow__commentedName">Victor Pinto</p>
-                        <p class="commentFlow__commentedTime">11/02/2023</p>
-                    </div>
-                    <p class="commentFlow__commentedContent">This is art. This is inexplicable magic expressed in the purest way, everything that makes up
-                        this
-                        majestic work deserves reverence. Let us appreciate this for what it is and what it contains.
-                    </p>
-                </li>
-            </div>
-    
-            <div class="commentFlow__commentCardWrapper">
-                <div class="commentFlow__Img commentFlow__Img--anonym"></div>
-                <li class="commentFlow__commentCard">
-                    <div class="commentFlow__commentedNameTimeWrapper">
-                        <p class="commentFlow__commentedName">Christina Cabrera</p>
-                        <p class="commentFlow__commentedTime">10/28/2023</p>
-                    </div>
-                    <p class="commentFlow__commentedContent">I feel blessed to have seen them in person. What a show! They were just perfection. 
-                     If there was one day of my life I could relive, this would be it. What an incredible day.
-                     Let us appreciate this for what it is and what it contains.
-                    </p>
-                </li>
-
-            </div>
-
-            <div class="commentFlow__commentCardWrapper">
-                <div class="commentFlow__Img commentFlow__Img--anonym"></div>
-                <li class="commentFlow__commentCard">
-                    <div class="commentFlow__commentedNameTimeWrapper">
-                        <p class="commentFlow__commentedName">Isaac Tadesse</p>
-                        <p class="commentFlow__commentedTime">10/20/2023</p>
-                    </div>
-                    <p class="commentFlow__commentedContent">
-                        I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. 
-                        What a beautiful expression of creativity. 
-                        Can't get enough. Let us appreciate this for what it is and what it contains.
-
-                    </p>
-
-                </li>
-            </div>
 
         </ul>
 

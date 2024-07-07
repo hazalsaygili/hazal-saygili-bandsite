@@ -1,56 +1,59 @@
+import BandSiteApi from "./band-site-api.js";
 const form = document.querySelector(".commentFlow__addComment");
-let commentArray = [
-  {
-    name: "Isaac Tadesse",
-    time: "10/20/2023",
-    content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough. Let us appreciate this for what it is and what it contains."
-  },
-  {
-    name: "Christina Cabrera",
-    time: "10/28/2023",
-    content: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day. Let us appreciate this for what it is and what it contains."
-  },
-  {
-    name: "Victor Pinto",
-    time: "11/02/2023",
-    content: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."
-  }
-]
 
-form.addEventListener("submit", (event) => {
-  
+let apiKey = "ac51252c-3c39-48f1-ade6-ee3f2ee13241";
+const bandSiteApi = new BandSiteApi(apiKey);
+
+
+form.addEventListener("submit", async (event) => {
+
   event.preventDefault();
   const name = event.target.commentName.value;
-  const time = new Date().toLocaleDateString('en-us');
-  const content = event.target.commentContent.value;
+  const comment = event.target.commentContent.value;
 
   event.target.commentName.classList.remove("commentFlow__textFields--error");
-  if(!name){
-    event.target.commentName.classList.add("commentFlow__textFields--error");
-    return;
-  }
-
   event.target.commentContent.classList.remove("commentFlow__textFields--error");
-  if(!content){
+  let isError = false;
+  if (!name) {
+    event.target.commentName.classList.add("commentFlow__textFields--error");
+    isError = true;
+  }
+  if (!comment) {
     event.target.commentContent.classList.add("commentFlow__textFields--error");
+    isError = true;
+  }
+  if (isError) {
+    alert("You need to enter a name and comment to post your comment");
     return;
   }
 
-  let newComment = {name, time, content};
-  commentArray.push(newComment);
+  let newComment = {name, comment};
+  await bandSiteApi.postComment(newComment);
   form.reset();
+  await displayCommentSection();
+});
+
+async function displayCommentSection() {
+  let commentArray;
+  try {
+    commentArray = await bandSiteApi.getComments();
+  }
+  catch (error) {
+    console.error(error)
+  }
+
   const commentList = document.getElementById("comments");
-  commentList.textContent="";
+  commentList.textContent = "";
 
   let commentWrappers = [];
-  for(let i=commentArray.length-1; i>=0; i--) {
-    const commentCardWrapper = createComment(commentArray[i].name, commentArray[i].time, commentArray[i].content);
+
+  for (let i = 0; i < commentArray.length; i++) {
+    const date = new Date(commentArray[i].timestamp).toLocaleDateString('en-us');
+    const commentCardWrapper = createComment(commentArray[i].name, date, commentArray[i].comment);
     commentWrappers.push(commentCardWrapper);
     commentList.appendChild(commentCardWrapper);
   }
-
-
-});
+}
 
 let createComment = (name, time, content) => {
 
@@ -86,7 +89,7 @@ let createComment = (name, time, content) => {
   commentCard.appendChild(commentContent);
 
   return commentCardWrapper;
-  
+
 }
 
-
+await displayCommentSection();

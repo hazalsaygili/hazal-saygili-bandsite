@@ -233,9 +233,10 @@ button {
         &:hover {
             cursor: pointer;
             background-color: $alabaster;
+
         }
 
-        &:active {
+        &:target {
             background-color: $mercury;
         }
 

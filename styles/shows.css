@@ -236,7 +236,7 @@ button {
   cursor: pointer;
   background-color: #FAFAFA;
 }
-.shows__desktopShowItem:active {
+.shows__desktopShowItem:target {
   background-color: #E1E1E1;
 }
 
