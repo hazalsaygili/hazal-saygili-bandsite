@@ -68,18 +68,24 @@ h1 {
 }
 
 h2 {
-  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
   margin: 0;
   padding: 1.5rem 0 1rem 0;
   color: #ffffff;
+  font-weight: normal;
 }
 @media screen and (min-width: 768px) {
   h2 {
     font-size: 2.25rem;
     line-height: 2.75rem;
     padding: 3rem 0 2.25rem 0;
+    font-weight: 600;
+  }
+}
+@media screen and (min-width: 1280px) {
+  h2 {
+    font-weight: normal;
   }
 }
 
@@ -239,7 +245,8 @@ button {
     width: 80%;
   }
 }
-.shows__desktop p, .shows__desktop h3 {
+.shows__desktop p,
+.shows__desktop h3 {
   width: 25%;
 }
 .shows__desktopHeaderItem {
