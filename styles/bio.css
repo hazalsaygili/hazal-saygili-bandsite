@@ -366,10 +366,13 @@ button {
     padding: 1rem;
   }
 }
+.commentFlow #commentContent {
+  resize: none;
+}
 .commentFlow__label {
   padding-top: 0.5rem;
   font-size: 0.75rem;
-  font-weight: bold;
+  font-weight: 600;
   color: #afafaf;
 }
 .commentFlow__commentList {
@@ -407,7 +410,7 @@ button {
   justify-content: space-between;
 }
 .commentFlow__commentedName {
-  font-weight: bold;
+  font-weight: 600;
 }
 .commentFlow__commentedTime {
   color: #afafaf;

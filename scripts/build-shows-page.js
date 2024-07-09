@@ -85,40 +85,70 @@ function displayUpcomingShows() {
     showItem.appendChild(buyTicketButton);
   }
 
+  //add event listener for click event for show items desktop
+  let shows = document.getElementsByClassName("shows__desktopShowItem");
+  console.log(shows);
+
+  for (let i = 0; i < shows.length; i++) {
+    shows.item(i).onclick = function () {
+      for (let j = 0; j < shows.length; j++) {
+        shows.item(j).classList.remove("shows__selectedShow");
+      }
+      shows.item(i).classList.add("shows__selectedShow");
+      console.log(shows.item(i));
+    };
+  }
+
   //create shows mobile design
   const showsMobile = document.createElement("div");
   showsMobile.classList.add("shows__mobile");
   showListWrapper.appendChild(showsMobile);
 
   for (let i = 0; i < showsListArr.length; i++) {
+    const showsMobileItem = document.createElement("div");
+    showsMobile.appendChild(showsMobileItem);
+
     const dates = document.createElement("h3");
     dates.innerText = "DATE";
-    showsMobile.appendChild(dates);
+    showsMobileItem.appendChild(dates);
     const showDate = document.createElement("p");
     showDate.innerText = new Date(showsListArr[i].date)
       .toLocaleDateString("en-us", options)
       .replace(/,/g, "");
     showDate.style.fontWeight = "bold";
-    showsMobile.appendChild(showDate);
+    showsMobileItem.appendChild(showDate);
 
     const venues = document.createElement("h3");
     venues.innerText = "VENUE";
-    showsMobile.appendChild(venues);
+    showsMobileItem.appendChild(venues);
     const showVenue = document.createElement("p");
     showVenue.innerText = showsListArr[i].place;
-    showsMobile.appendChild(showVenue);
+    showsMobileItem.appendChild(showVenue);
 
     const locations = document.createElement("h3");
     locations.innerText = "LOCATION";
-    showsMobile.appendChild(locations);
+    showsMobileItem.appendChild(locations);
     const showLocation = document.createElement("p");
     showLocation.innerText = showsListArr[i].location;
-    showsMobile.appendChild(showLocation);
+    showsMobileItem.appendChild(showLocation);
 
     const buyTicketButton = document.createElement("button");
     buyTicketButton.classList.add("shows__buyTicketsButton");
     buyTicketButton.innerText = "BUY TICKETS";
-    showsMobile.appendChild(buyTicketButton);
+    showsMobileItem.appendChild(buyTicketButton);
   }
 
+  //add event listener for click event for show items mobile
+  let showListing = showsMobile.querySelectorAll("div");
+  console.log(showListing);
+
+  for (let i = 0; i < showListing.length; i++) {
+    showListing.item(i).onclick = function () {
+      for (let j = 0; j < showListing.length; j++) {
+        showListing.item(j).classList.remove("shows__selectedShow");
+      }
+      showListing.item(i).classList.add("shows__selectedShow");
+      console.log(showListing.item(i));
+    };
+  }
 }

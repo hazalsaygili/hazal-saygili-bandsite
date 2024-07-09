@@ -371,10 +371,13 @@ button {
     }
   }
 
+  #commentContent {
+    resize: none;
+  }
   &__label {
     padding-top: 0.5rem;
     font-size: 0.75rem;
-    font-weight: bold;
+    font-weight: 600;
     color: $silver;
   }
 
@@ -416,7 +419,7 @@ button {
   }
 
   &__commentedName {
-    font-weight: bold;
+    font-weight: 600;
   }
 
   &__commentedTime {
