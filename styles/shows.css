@@ -347,7 +347,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1280px) {
   .hero {
     flex-direction: row;
   }

@@ -338,7 +338,7 @@ button {
   background-position: center;
   background-repeat: no-repeat;
 
-  @include tablet {
+  @include desktop {
     flex-direction: row;
   }
 
